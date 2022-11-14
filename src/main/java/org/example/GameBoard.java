@@ -1,14 +1,53 @@
-package org.example;
 
-public class GameBoard {
-    String[] location = {"Fejl 001", "", "Tower", "Crater", "Palace gates", "Cold Dessert", "Walled City", "Monastery", "Black Cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine"};
-    //Point system
-    int[] points = {0, 0, 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
+        placementField[0] = new String[]{"Start", "get money 2"};
+        costList[0] = new int[]{+2, 11}; // Start is Group 11!
+        placementField[1] = new String[]{"Gatekjøkkenet", "Brun"};
+        costList[1] = new int[]{1, 0};
+        placementField[2] = new String[]{"Pizzahuset", "Brun"};
+        costList[2] = new int[]{1, 0};
+        placementField[3] = new String[]{"Chance"};
+        costList[3] = new int[]{0, 8};//Chance == Group 8
+        placementField[4] = new String[]{"Godtebutikken", "Lyseblaa"};
+        costList[4] = new int[]{1, 1};
+        placementField[5] = new String[]{"Iskiosken", "Lyseblaa"};
+        costList[5] = new int[]{1, 1};
+        placementField[6] = new String[]{"Visiter fængsel"};
+        ;
+        costList[6] = new int[]{0, 12}; //Visit in prison is Group 12 for setup
+        placementField[7] = new String[]{"Museet", "Lilla"};
+        costList[7] = new int[]{2, 2};
+        placementField[8] = new String[]{"Biblioteket", "Lilla"};
+        costList[8] = new int[]{2, 2};
+        placementField[9] = new String[]{"Chance"};
+        costList[9] = new int[]{0, 8};//Chance == Group 8
+        placementField[10] = new String[]{"Skaterparken", "Orange"};
+        costList[10] = new int[]{2, 3};
+        placementField[11] = new String[]{"Svømmingpoolen", "Orange"};
+        costList[11] = new int[]{2, 3};
+        placementField[12] = new String[]{"Parkering"};
+        costList[12] = new int[]{0, 9};//Parkering er 9 if not optimal.
+        placementField[13] = new String[]{"Spillehallen", "Rød"};
+        costList[13] = new int[]{3, 4};
+        placementField[14] = new String[]{"Kinoen", "Rød"};
+        costList[14] = new int[]{3, 4};
+        placementField[15] = new String[]{"Chance"};
+        costList[15] = new int[]{0, 8};//Chance == Group 8
+        placementField[16] = new String[]{"Legetøjsbilbutikken", "Gul"};
+        costList[16] = new int[]{3, 5};
+        placementField[17] = new String[]{"Dyrehandlen", "Gul"};
+        costList[17] = new int[]{3, 5};
+        placementField[18] = new String[]{"Fængsel"};
+        costList[18] = new int[]{0, 10}; // PRISON IS GROUP 18
+        placementField[19] = new String[]{"Bowlinghallen", "Grøn"};
+        costList[19] = new int[]{4, 6};
+        placementField[20] = new String[]{"ZoologiskHave", "Grøn"};
+        costList[20] = new int[]{4, 6};
+        placementField[21] = new String[]{"Chance"};
+        costList[21] = new int[]{0, 8};
+        placementField[22] = new String[]{"Vandlandet", "Blå"};
+        costList[22] = new int[]{4, 7};
+        placementField[23] = new String[]{"Strandpromonaden", "Blå"};
+        costList[23] = new int[]{4, 7};
 
-    //Array Kommentare
-    String[] negativeComments = {"Det gik ikke så godt!", "Du igang med at gå bankerot", "Nårh, det var ikke så godt", "Du blir bare fattigere og fattigere", "Du længere væk fra at blive min sugardaddy", "Det gik sku nedaf", "Du lort, bli bedre noob!", "gg, er noget du ikke burde sige"};
-    String[] positiveComments = {"Det går flyvende", "du sindsyg!", "Har du det varmt, eller er det kun mig?", "Hvordan er du så god!", "Du må gerne blive min sugardaddy", "DET KAN IKKE BLIVE BEDRE!", "SINDSSYYGGTT!!", "LETTSS GOOOOOOOOOO"};
 
 
-
-}
