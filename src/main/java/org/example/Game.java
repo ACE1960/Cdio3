@@ -33,11 +33,6 @@ String Textdata;
 
         GUI gui = new GUI(board2);
         GUI_Player gui_Player = new GUI_Player("Brian123456789012345667");
-        gui.addPlayer(gui_Player);
-        gui.addPlayer(new GUI_Player("Brian123123213213213213"));
-        gui.addPlayer(new GUI_Player("Brian2"));
-        gui.addPlayer(new GUI_Player("Brian3"));
-
         Textdata = "" + gui.getUserString(inputText);
         while (playing) {
             System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
@@ -50,6 +45,12 @@ String Textdata;
               //  try {
                 //    if (Textdata == "4") {
 
+
+
+            gui.addPlayer(gui_Player);
+            gui.addPlayer(new GUI_Player("Brian123123213213213213"));
+            gui.addPlayer(new GUI_Player("Brian2"));
+            gui.addPlayer(new GUI_Player("Brian3"));
 
                         board[0].setCar(gui_Player, true);
                         board[0].setCar(gui_Player, false);
