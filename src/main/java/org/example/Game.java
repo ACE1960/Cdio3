@@ -16,20 +16,14 @@ public class Game {
     GameBoard gameBoard = new GameBoard(board);
 
     Scanner scanner = new Scanner(System.in);
-
-
-
     boolean playing = true;
     String inputText= "";
-
-
 
 
     public void play() {
         GUI_Field[] board = GameBoard.makeFields();
         GUI_Field[] board2 = new GUI_Field[24];
-        //GUI_Field[] fields = GUI_FieldFactory.makeFields();
-        //GUI_Field[] fields2 = new GUI_Field[24];
+
 
         for(int i = 0; i < board2.length; ++i) {
             board2[i] = board[i];
