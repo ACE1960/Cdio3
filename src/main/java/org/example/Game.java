@@ -1,7 +1,8 @@
 package org.example;
 
+import gui_fields.GUI_Field;
 import gui_main.GUI;
-import org.w3c.dom.Text;
+
 
 import java.util.Scanner;
 
@@ -11,11 +12,12 @@ public class Game {
     int randomNum;
     Wallet wallet;
     Player player1, player2;
-    GameBoard gameBoard;
+    private GameBoard[] board;
+    GameBoard gameBoard = new GameBoard(board);
 
     Scanner scanner = new Scanner(System.in);
 
-    GUI gui = new GUI();
+
 
     boolean playing = true;
     String inputText= "";
@@ -24,6 +26,17 @@ public class Game {
 
 
     public void play() {
+        GUI_Field[] board = GameBoard.makeFields();
+        GUI_Field[] board2 = new GUI_Field[24];
+        //GUI_Field[] fields = GUI_FieldFactory.makeFields();
+        //GUI_Field[] fields2 = new GUI_Field[24];
+
+        for(int i = 0; i < board2.length; ++i) {
+            board2[i] = board[i];
+        }
+
+
+        GUI gui = new GUI(board2);
         String TextData = "" + gui.getUserString(inputText);
         while (playing) {
             System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
@@ -72,8 +85,7 @@ public class Game {
         System.out.println("Tryk på enter spiller 1");
         String p1 = scanner.nextLine();
         holder.sum();
-        System.out.println("Spiller 1 du slog " + holder.getSum() + " og landet på "+ gameBoard.location[holder.getSum()] + " Denne Square Værdi gav : " + gameBoard.points[holder.getSum()]);
-        player1.myWallet.setSquareMoney(gameBoard.points[holder.getSum()]);
+
         Comment();
         System.out.println(" player 1 har nu "+player1.myWallet.UpdateMoney()+" ");
     }
@@ -84,8 +96,7 @@ public class Game {
         String p2 = scanner.nextLine();
         System.out.println();
         holder.sum();
-        System.out.println("Spiller 2 du slog " + holder.getSum() + " og landet på "+ gameBoard.location[holder.getSum()] + " Denne Square Værdi gav : " + gameBoard.points[holder.getSum()]);
-        player2.myWallet.setSquareMoney(gameBoard.points[holder.getSum()]);
+
         Comment();
         System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
 
@@ -96,12 +107,9 @@ public class Game {
     }
 
     public void Comment(){
-        if(gameBoard.points[holder.getSum()]>=0){
-            System.out.print(gameBoard.positiveComments[randomNum]);
-        } else if(gameBoard.points[holder.getSum()]<0){
-            System.out.print(gameBoard.negativeComments[randomNum]);
+
         }
     }
 
-}
+
 
