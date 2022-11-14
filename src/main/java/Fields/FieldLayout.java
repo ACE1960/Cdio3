@@ -5,7 +5,7 @@ import org.example.Player;
 public abstract class FieldLayout {
     String fieldName;
     String fieldOwner;
-    Player player = new Player();
+
 
 
     public FieldLayout(String fieldName, String fieldOwner){
