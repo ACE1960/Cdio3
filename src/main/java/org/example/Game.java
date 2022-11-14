@@ -37,7 +37,7 @@ public class Game {
             gui.getUserInteger(inputText);
             //gui.getUserInteger(TextData,data,data);
             //gui.getUserString(TextData + "");
-            gui.showMessage("Du har indtastet :" + inputText);
+            gui.showMessage("Du har indtastet :" + TextData);
             System.out.println(TextData);
 
 

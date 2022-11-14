@@ -18,7 +18,7 @@ import java.awt.Color;
 
 
         public static GUI_Field[] makeFields() {
-            GUI_Field[] board = new GUI_Field[40];
+            GUI_Field[] board = new GUI_Field[24];
             int i = 0;
             board[i++] = new GUI_Start("Start", "Modtag: 2", "Modtag 2M,-Når man har passeret start", Color.RED, Color.BLACK);
             board[i++] = new GUI_Street("Gatekjøkkenet", "Pris:  1", "Gatekjøkkenet", "Leje:  1", new Color(101, 67, 33), Color.BLACK);
@@ -40,27 +40,11 @@ import java.awt.Color;
             board[i++] = new GUI_Street("Dyrehandlen", "Pris:  3", "Dyrehandlen", "Leje:  3", new Color(250,253,15), Color.BLACK);
             board[i++] = new GUI_Jail("default", "FÆNGSEL", "FÆNGSEL", "På Besøg I fængsel", new Color(125, 125, 125), Color.BLACK);
             board[i++] = new GUI_Street("Bowlinghallen", "Pris:  4", "Bowlinghallen", "Leje:  4", new Color(75,139,59), Color.BLACK);
-
             board[i++] = new GUI_Street("ZoologiskHave", "Pris:  4", "ZoologiskHave", "Leje:  4", new Color(75,139,59), Color.BLACK);
-
             board[i++] = new GUI_Chance("?", "Prøv lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
             board[i++] = new GUI_Street("Vandlandet", "Pris:  4", "Vandlandet", "Leje:  4", new Color(25,116,210), Color.BLACK);
             board[i++] = new GUI_Street("Strandpromonadenn", "Pris:  4", "Strandpromonaden", "Leje:  4", new Color(25,116,210), Color.BLACK);
 
-            board[i++] = new GUI_Street("Bredgade", "Pris:  260", "Bredgade", "Leje:  80", Color.WHITE, Color.BLACK);
-            board[i++] = new GUI_Street("Kgs. Nytorv", "Pris:  260", "Kongens Nytorv", "Leje:  80", Color.WHITE, Color.BLACK);
-            board[i++] = new GUI_Brewery("default", "Carlsberg", "Pris:  150", "Carlsberg bryggeri", "10 x [Terningslag]", Color.BLACK, Color.WHITE);
-            board[i++] = new GUI_Street("Ã˜stergade", "Pris:  280", "Ã˜stergade", "Leje:  85", Color.WHITE, Color.BLACK);
-            board[i++] = new GUI_Jail("default", "GÃ¥ i fÃ¦ngsel", "GÃ¥ i fÃ¦ngsel", "De fÃ¦ngsles\nSlÃ¥ to ens for at komme ud", new Color(125, 125, 125), Color.BLACK);
-            board[i++] = new GUI_Street("Amagertorv", "Pris:  300", "Amagertorv", "Leje:  95", new Color(255, 255, 50), Color.BLACK);
-            board[i++] = new GUI_Street("Vimmel-\nskaftet", "Pris:  300", "Vimmelskaftet", "Leje:  95", new Color(255, 255, 50), Color.BLACK);
-            board[i++] = new GUI_Chance("?", "PrÃ¸v lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
-            board[i++] = new GUI_Street("Nygade", "Pris:  320", "Nygade", "Leje:  100", new Color(255, 255, 50), Color.BLACK);
-            board[i++] = new GUI_Shipping("default", "Bornholm", "Pris:  200", "Bornholms redderi", "Leje:  75", Color.WHITE, Color.BLACK);
-            board[i++] = new GUI_Chance("?", "PrÃ¸v lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
-            board[i++] = new GUI_Street("Frederiks-\nberggade", "Pris:  350", "Frederiksberggade", "Leje:  120", new Color(150, 60, 150), Color.WHITE);
-            board[i++] = new GUI_Tax("Ekstra-\nordinÃ¦r\nstatsskat", "Betal 100", "Betal ekstraordinÃ¦r\nstatsskat: kr. 100,-", Color.GRAY, Color.BLACK);
-            board[i++] = new GUI_Street("RÃ¥dhuspladsen", "Pris:  400", "RÃ¥dhuspladsen", "Leje:  150", new Color(150, 60, 150), Color.WHITE);
             return board;
         }
     }
