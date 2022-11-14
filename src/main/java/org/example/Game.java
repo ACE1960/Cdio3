@@ -1,5 +1,8 @@
 package org.example;
 
+import gui_main.GUI;
+import org.w3c.dom.Text;
+
 import java.util.Scanner;
 
 public class Game {
@@ -12,14 +15,25 @@ public class Game {
 
     Scanner scanner = new Scanner(System.in);
 
+    GUI gui = new GUI();
 
     boolean playing = true;
+    String inputText= "";
+
 
 
 
     public void play() {
-
+        String TextData = "" + gui.getUserString(inputText);
         while (playing) {
+            System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
+            gui.getUserInteger(inputText);
+            //gui.getUserInteger(TextData,data,data);
+            //gui.getUserString(TextData + "");
+            gui.showMessage("Du har indtastet :" + inputText);
+            System.out.println(TextData);
+
+
 
             updateFlow();
             while (holder.getSum() == 10) {

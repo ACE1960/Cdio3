@@ -1,5 +1,9 @@
 package Fields;
 
+import gui_codebehind.GUI_FieldFactory;
+import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
+import gui_main.GUI;
 import org.example.Player;
 
 import java.util.ArrayList;
@@ -12,6 +16,15 @@ public class PlacementList {
     private final FieldLayout[] fieldList = new FieldLayout[23];
 
     public void placementField() {
+        GUI_Field[] fields = GUI_FieldFactory.makeFields();
+
+        GUI_Field[] fields2 = new GUI_Field[24];
+        for(int i = 0; i <fields2.length;i++) {
+            fields2[i] = fields[i];
+        }
+        GUI gui = new GUI(fields2);
+
+        GUI_Player guiPlayer = new GUI_Player("Name");
         //[][] er [navn] og [farve]
         String[][] placementField = new String[23][];
         String[] color = new String[23];
