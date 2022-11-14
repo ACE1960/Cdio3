@@ -1,28 +1,33 @@
 package org.example;
 
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Player;
-import gui_main.GUI;
-
-import java.awt.*;
-
 public class Player {
     Wallet myWallet;
-    Player player = new Player();
-    GUI_Field[] fields = new GUI_Field[25];
-    GUI gui = new GUI(fields);
-
-    GUI_Player car = new GUI_Player("John Ranmbo", 1000);
+    private int position;
+    private int[] ints = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
 
 
     public Player() {
         myWallet = new Wallet();
-    //this.car = new GUI(gui.addPlayer("John ranbo",1000));
-
-
     }
-    // public void update(){
-//
-    //value = myWallet.SQpoints[8];
-    //  }
+    public int[] moveSquare (int n) {
+
+        if (n >= 0) {
+
+            for (int j = 0; j < n; j++) {
+                int first = ints[0];
+
+                for (int i = 0; i < ints.length - 1; i++)
+                    ints[i] = ints[i + 1];
+
+                ints[ints.length - 1] = first;
+            }}
+        return ints;
+    }
+    public int showIntPosition(){
+        position=ints[0];
+        return position;
+    }
+
+
+
 }

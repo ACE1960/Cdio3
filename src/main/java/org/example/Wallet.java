@@ -1,7 +1,7 @@
 package org.example;
 
 public class Wallet {
-    private int money=1000;
+    private int money=2;
     private int SquareMoney;
 
 
