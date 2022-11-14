@@ -1,5 +1,5 @@
 package Fields;
-
+//Gratis Parkering felt, vent til næste runde før du må kaste terning. (er det samme som besøg felt)
 public class FreeParkingField extends  FieldLayout{
 
 
