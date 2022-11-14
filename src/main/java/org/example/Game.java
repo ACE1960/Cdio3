@@ -1,6 +1,7 @@
 package org.example;
 
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
 import gui_main.GUI;
 
 
@@ -8,7 +9,7 @@ import java.util.Scanner;
 
 public class Game {
     Holder holder;
-
+boolean Gaming = true;
     int randomNum;
     Wallet wallet;
     Player player1, player2;
@@ -18,7 +19,7 @@ public class Game {
     Scanner scanner = new Scanner(System.in);
     boolean playing = true;
     String inputText= "";
-
+String Textdata;
 
     public void play() {
         GUI_Field[] board = GameBoard.makeFields();
@@ -31,14 +32,38 @@ public class Game {
 
 
         GUI gui = new GUI(board2);
-        String TextData = "" + gui.getUserString(inputText);
+        GUI_Player gui_Player = new GUI_Player("Brian123456789012345667");
+        gui.addPlayer(gui_Player);
+        gui.addPlayer(new GUI_Player("Brian123123213213213213"));
+        gui.addPlayer(new GUI_Player("Brian2"));
+        gui.addPlayer(new GUI_Player("Brian3"));
+
+        Textdata = "" + gui.getUserString(inputText);
         while (playing) {
             System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
             gui.getUserInteger(inputText);
             //gui.getUserInteger(TextData,data,data);
             //gui.getUserString(TextData + "");
-            gui.showMessage("Du har indtastet :" + TextData);
-            System.out.println(TextData);
+            gui.showMessage("Du har indtastet :" + Textdata);
+            System.out.println(Textdata);
+            //while (Gaming) {
+              //  try {
+                //    if (Textdata == "4") {
+
+
+                        board[0].setCar(gui_Player, true);
+                        board[0].setCar(gui_Player, false);
+                        System.out.println(board[0].hasCar(gui_Player));
+                        int parseTextdata = Integer.parseInt(Textdata);
+                        for(int i = 0; i <  parseTextdata; ++i) {
+                        }
+                  //  }
+                //} catch (Exception e) {
+                  //  System.out.println("Den er helt gakgak");
+
+
+
+
 
 
 
@@ -67,7 +92,13 @@ public class Game {
             }
         }
 
+
+
+
     }
+    public void PlayerChecker() {
+    }
+
 
 
 
