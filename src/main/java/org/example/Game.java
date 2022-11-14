@@ -24,13 +24,17 @@ public class Game {
 
 
     public void play() {
+        gui.showMessage("Hvor mange spillere vil du have?");
         String TextData = "" + gui.getUserString(inputText);
+
         while (playing) {
+
             System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
+
             gui.getUserInteger(inputText);
             //gui.getUserInteger(TextData,data,data);
             //gui.getUserString(TextData + "");
-            gui.showMessage("Du har indtastet :" + inputText);
+            gui.showMessage("Du har indtastet :" + TextData);
             System.out.println(TextData);
 
 
