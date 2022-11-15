@@ -1,21 +1,8 @@
 package org.example;
-
-import gui_main.GUI;
-
-public class Main {
+import org.example.HolderPlayerController;
+public class Main{
     public static void main(String[] args) {
-
-
-
-
-        Game game = new Game();
-
-        /**
-         * Referer til game.play() som er et true loop, der sørger for at spillet løber indtil der er vundet.
-         */
-        game.play();
-
+HolderPlayerController her=new HolderPlayerController();
+her.carMove();
     }
 }
-
-

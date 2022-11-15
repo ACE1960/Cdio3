@@ -20,14 +20,11 @@ public class BuyableField extends Field {
         this.playerNumber = playerNumber;
     }
 
-    public int landOndField( boolean[] liste) {
+    public int landOndField() {
        if (owned=false){
-           owned=true;
-           liste[getBoardNumber()]=true;
            return -cost;
        }
 else
         return -rentMoney;
-
     }
 }
