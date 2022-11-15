@@ -7,7 +7,7 @@ public class Start extends Field{
         this.money=money;
     }
 
-    @Override
+
     public void landOndFIeld() {
 
     }

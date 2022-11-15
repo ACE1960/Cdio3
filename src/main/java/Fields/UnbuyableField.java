@@ -4,8 +4,8 @@ public class UnbuyableField extends Field {
         super(fieldName,BoardNumber);
 
     }
-    @Override
-    public void landOndFIeld() {
+
+    public void landOndField() {
 
     }
 }

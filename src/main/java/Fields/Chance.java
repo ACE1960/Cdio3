@@ -5,5 +5,8 @@ public class Chance extends UnbuyableField{
         super(fieldName,BoardNumber);
 
     }
+    @Override
+    public void landOndField() {
 
+    }
 }

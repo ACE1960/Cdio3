@@ -1,8 +1,8 @@
 package Fields;
 
-public class Field {
+public class  Field {
     private String fieldName;
-    private int BoardNumber;
+    protected int BoardNumber;
     public  Field (String fieldName, int BoardNumber){
         this.fieldName=fieldName;
         this.BoardNumber=BoardNumber;
@@ -12,6 +12,5 @@ public class Field {
         return BoardNumber;
     }
 
-    public void landOndFIeld();
 
 }

@@ -6,7 +6,7 @@ public class Prison extends UnbuyableField{
 
     }
     @Override
-    void landOndFIeld() {
+    public void landOndField() {
 
     }
 }
