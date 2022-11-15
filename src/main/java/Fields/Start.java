@@ -8,8 +8,8 @@ public class Start extends Field{
     }
 
 
-    public void landOndFIeld() {
-
+    public int landOndFIeld() {
+return money;
     }
 
 }

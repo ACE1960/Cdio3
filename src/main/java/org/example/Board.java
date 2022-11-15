@@ -4,8 +4,9 @@ import Fields.*;
 
 
 public class Board {
+  Field[] fieldlist;
  public Board(){
-  Field[] fieldlist = new Field[24];
+   fieldlist = new Field[24];
   fieldlist[0]= new Start("Start",1,2);
   fieldlist[1]= new BuyableField("Gatekjønnet","Brun",2,1);
   fieldlist[2]= new BuyableField("Pizzahuset","Brun",3,1);
@@ -31,15 +32,7 @@ public class Board {
   fieldlist[22]= new BuyableField("Lalandia","Blå",23,4);
   fieldlist[23]= new BuyableField("Strandpromenaden","Blå",24,4);
 
-
-
-
-
-
-
-
-
- }
+}
 
 
 }
