@@ -27,11 +27,7 @@ public class BuyableField extends Field {
            return -cost;
        }
 else
-    if (!liste[BoardNumber]){
-        return rentMoney;
-    }
-    else
-        return 0;
+        return -rentMoney;
 
     }
 }
