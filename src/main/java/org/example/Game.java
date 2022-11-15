@@ -12,12 +12,17 @@ public class Game {
 boolean Gaming = true;
     int randomNum;
     Wallet wallet;
-    Player player1, player2;
+    Player player2;
+    Player player1 = new Player();
+
+
     private GameBoard[] board;
     GameBoard gameBoard = new GameBoard(board);
 
     Scanner scanner = new Scanner(System.in);
     boolean playing = true;
+    Player [] playerList;
+
     String inputText= "";
 String Textdata;
 
@@ -37,16 +42,28 @@ String Textdata;
         while (playing) {
             System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
             gui.getUserInteger(inputText);
-            //gui.getUserInteger(TextData,data,data);
-            //gui.getUserString(TextData + "");
+
             gui.showMessage("Du har indtastet :" + Textdata);
-            System.out.println(Textdata);
+            // System.out.println(Textdata);
+            int x = Integer.parseInt(Textdata);
+            System.out.println(x);
+
+            //playerList[x] = player1;
+
+
+            player1.setPlayerAmount(x,gui);
+            board[0].setCar(gui_Player, true);
+
+            //player1.SetplayerAmount(Integer.parseInt(Textdata));
+
+
+
             //while (Gaming) {
               //  try {
                 //    if (Textdata == "4") {
 
 
-
+/*
             gui.addPlayer(gui_Player);
             gui.addPlayer(new GUI_Player("Brian123123213213213213"));
             gui.addPlayer(new GUI_Player("Brian2"));
@@ -61,7 +78,7 @@ String Textdata;
                   //  }
                 //} catch (Exception e) {
                   //  System.out.println("Den er helt gakgak");
-
+*/
 
 
 
