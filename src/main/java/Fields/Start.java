@@ -9,20 +9,21 @@ public class Start extends Field{
         super(fieldName,BoardNumber);
         this.money=money;
     }
+    @Override
 
-
-    public void landOndFIeld(Player player1, Player player2) {
-        player1.myWallet.setSquareMoney(money);
-        player2.myWallet.UpdateMoney();
-    }
     public void landOndField(Player player1,Player player2) {
-
+        player1.myWallet.setSquareMoney(money);
+        player1.myWallet.UpdateMoney();
     }
+    @Override
     public void landOndField(Player player1,Player player2,Player player3) {
-
+        player1.myWallet.setSquareMoney(money);
+        player1.myWallet.UpdateMoney();
     }
+    @Override
     public void landOndField(Player player1,Player player2,Player player3, Player player4) {
-
+        player1.myWallet.setSquareMoney(money);
+        player1.myWallet.UpdateMoney();
     }
 
 }
