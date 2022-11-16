@@ -25,18 +25,24 @@ public class BuyableField extends Field {
     }
 
     public void landOndField(Player player, Wallet wallet) {
-       if (owned=false){
-           if(player.myWallet.getMoney()>cost){
+       if (owned=false) {
+           if (player.myWallet.getMoney() > cost) {
                player.myWallet.setSquareMoney(-cost);
                player.myWallet.UpdateMoney();
-               player.getOwnerlist();
+               player.setOwnerlist(getBoardNumber());
+               owned = true;
+           } else {
+               player.myWallet.setSquareMoney(-cost);
+               player.myWallet.UpdateMoney();
            }
-           else {
-               player.myWallet.setSquareMoney(-cost);
-               player.myWallet.UpdateMoney();
+       }
+else{
+    if(!player.getOwnerlist(getBoardNumber())){
+        player.myWallet.setSquareMoney(-rentMoney);
+        player.myWallet.UpdateMoney();
+    }
            }
 
-       }
 
     }
 }

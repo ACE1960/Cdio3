@@ -12,12 +12,13 @@ false,false,false,false,false,false,false,false};
         myWallet = new Wallet();
     }
 
-    public boolean[] getOwnerlist() {
-        return ownerlist;
+    public boolean getOwnerlist(int bool) {
+        boolean m =ownerlist[bool];
+        return m;
     }
 
-    public void setOwnerlist(boolean[] ownerlist) {
-        this.ownerlist = ownerlist;
+    public void setOwnerlist(int bool) {
+   ownerlist[bool]= true;
     }
 
     public int[] moveSquare (int n) {
