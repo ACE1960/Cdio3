@@ -1,4 +1,8 @@
 package Fields;
+
+import org.example.Player;
+import org.example.Wallet;
+
 public class BuyableField extends Field {
     private int cost;
     private int playerNumber=1;
@@ -20,11 +24,19 @@ public class BuyableField extends Field {
         this.playerNumber = playerNumber;
     }
 
-    public int landOndField() {
+    public void landOndField(Player player, Wallet wallet) {
        if (owned=false){
-           return -cost;
+           if(player.myWallet.getMoney()>cost){
+               player.myWallet.setSquareMoney(-cost);
+               player.myWallet.UpdateMoney();
+               player.getOwnerlist();
+           }
+           else {
+               player.myWallet.setSquareMoney(-cost);
+               player.myWallet.UpdateMoney();
+           }
+
        }
-else
-        return -rentMoney;
+
     }
 }
