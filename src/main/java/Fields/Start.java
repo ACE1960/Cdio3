@@ -11,9 +11,18 @@ public class Start extends Field{
     }
 
 
-    public void landOndFIeld(Player player, Wallet wallet) {
-        player.myWallet.setSquareMoney(money);
-        player.myWallet.UpdateMoney();
+    public void landOndFIeld(Player player1, Player player2) {
+        player1.myWallet.setSquareMoney(money);
+        player2.myWallet.UpdateMoney();
+    }
+    public void landOndField(Player player1,Player player2) {
+
+    }
+    public void landOndField(Player player1,Player player2,Player player3) {
+
+    }
+    public void landOndField(Player player1,Player player2,Player player3, Player player4) {
+
     }
 
 }
