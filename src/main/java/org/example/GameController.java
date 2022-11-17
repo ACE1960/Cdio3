@@ -1,23 +1,29 @@
 package org.example;
 
 import gui_fields.GUI_Field;
-import gui_fields.GUI_Player;
 import gui_main.GUI;
 
 
 import java.util.Scanner;
 
-public class Game {
+public class GameController {
     Holder holder;
 boolean Gaming = true;
     int randomNum;
-    Wallet wallet;
-    Player player2;
-    Player player1 = new Player();
 
-
+    Player player1,player2,player3,player4;
+    Board board2;
+    public GameController(){
+        holder=new Holder();
+        player1= new Player(20);
+        player2= new Player(20);
+        player3 = new Player(16);
+        player4= new Player(16);
+        board2= new Board();
+        GameBoard gameBoard = new GameBoard(board);
+    }
     private GameBoard[] board;
-    GameBoard gameBoard = new GameBoard(board);
+
 
     Scanner scanner = new Scanner(System.in);
     boolean playing = true;
@@ -49,7 +55,7 @@ String Textdata;
             System.out.println(x);
 
 
-            player1.setPlayerAmount(x,gui,board2);
+           // player1.setPlayerAmount(x,gui,board2);
             /*
                         for(int i = 0; i <  parseTextdata; ++i) {
                         }
