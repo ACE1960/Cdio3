@@ -2,7 +2,7 @@ package Fields;
 import org.example.*;
 public class  Field {
     private String fieldName;
-    protected int BoardNumber;
+    protected final  int BoardNumber;
     Player player1,player2,player3,player4;
 
     public  Field (String fieldName, int BoardNumber){
