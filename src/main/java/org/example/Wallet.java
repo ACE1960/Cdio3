@@ -1,12 +1,12 @@
 package org.example;
 
 public class Wallet {
-    private int money=1000;
+    private int money;
     private int SquareMoney;
 
 
-    public Wallet(){
-
+    public Wallet(int money){
+this.money=money;
     }
 
     /**

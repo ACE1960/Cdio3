@@ -3,13 +3,15 @@ package org.example;
 public class Player {
    public Wallet myWallet;
     private int position;
+    private int money2;
     private int[] ints = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
 private boolean[] ownerlist = new boolean[]{false,false,false,false,false,false,false,false,
 false,false,false,false,false,false,false,false,false,false,false,
 false,false,false,false,false,false,false,false};
 
-    public Player() {
-        myWallet = new Wallet();
+    public Player(int money) {
+        money2=money;
+        myWallet = new Wallet(money2);
     }
 
     public boolean getOwnerlist(int bool) {
