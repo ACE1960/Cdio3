@@ -1,6 +1,7 @@
 package org.example;
 
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
 import gui_main.GUI;
 
 
@@ -11,9 +12,14 @@ public class GameController {
 boolean Gaming = true;
 
     Player player1,player2,player3,player4;
+    Player player;
+
+
+
     Board board2;
     public GameController(){
         holder=new Holder();
+
         player1= new Player(20);
         player2= new Player(20);
         player3 = new Player(16);
@@ -39,11 +45,13 @@ String Textdata;
             board2[i] = board[i];
         }
 
-
         GUI gui = new GUI(board2);
+
+
 
         Textdata = "" + gui.getUserString(inputText);
         while (playing) {
+
             System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
             gui.getUserInteger(inputText);
 
@@ -55,8 +63,26 @@ String Textdata;
 
             player1.setPlayerAmount(x,gui,board2);
 
-            holder.sum(gui);
-            player1.moveCar(gui,board2);
+
+
+
+            holder.sum();
+            gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+            System.out.println(holder.getSum());
+            player1.moveSquare(holder.getSum());
+
+            player1.moveCar1(board2,holder.getSum());
+
+            gui.getUserButtonPressed("ja", String.valueOf(true));
+            //player2.setPlayerAmount(x,gui,board2);
+            //holder.sum(gui);
+            //NUVÆRENDE BUG er at player1 bliver sat som setPlayerAmount
+            //player2.moveCar2(board2,holder.getSum());
+            //player2.moveCar2(board2,holder.getSum());
+            //gui.getUserButtonPressed("ja", String.valueOf(true));
+            //player2.moveCar2(board2,holder.getSum());
+
+            //player1.moveCar(gui,board2,holder.sum(gui));
 
            /*
                         for(int i = 0; i <  parseTextdata; ++i) {
@@ -95,20 +121,10 @@ String Textdata;
                 break;
             }
         }
-
-
-
-
     }
+
     public void PlayerChecker() {
     }
-
-
-
-
-
-
-
 
     public void updateFlow(){
         System.out.println("Tryk på enter spiller 1");

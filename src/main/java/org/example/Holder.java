@@ -19,9 +19,9 @@ public class Holder {
      *
      * @return
      */
-    public int  sum(GUI gui){
+    public int  sum(){
         sum = die1.roll()+die2.roll();
-        gui.setDice(die1.roll(),die2.roll());
+
         return sum;
 
     }
