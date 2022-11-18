@@ -1,4 +1,5 @@
 package org.example;
+import gui_main.GUI;
 
 public class Holder {
 
@@ -18,8 +19,9 @@ public class Holder {
      *
      * @return
      */
-    public int  sum(){
+    public int  sum(GUI gui){
         sum = die1.roll()+die2.roll();
+        gui.setDice(die1.roll(),die2.roll());
         return sum;
 
     }

@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class GameController {
     Holder holder;
 boolean Gaming = true;
-    int randomNum;
+    int randomNum, randomNum2;
 
     Player player1,player2,player3,player4;
     Board board2;
@@ -36,7 +36,6 @@ String Textdata;
         GUI_Field[] board = GameBoard.makeFields();
         GUI_Field[] board2 = new GUI_Field[24];
 
-
         for(int i = 0; i < board2.length; ++i) {
             board2[i] = board[i];
         }
@@ -55,7 +54,13 @@ String Textdata;
             System.out.println(x);
 
 
-           player1.setPlayerAmount(x,gui,board2);
+            player1.setPlayerAmount(x,gui,board2);
+            updateNum();
+            holder.sum(gui);
+            //gui.setDice(randomNum,randomNum2);
+
+            System.out.println(randomNum + "" + randomNum2);
+
 
            /*
                         for(int i = 0; i <  parseTextdata; ++i) {
@@ -112,7 +117,7 @@ String Textdata;
     public void updateFlow(){
         System.out.println("Tryk på enter spiller 1");
         String p1 = scanner.nextLine();
-        holder.sum();
+        //holder.sum();
 
         Comment();
         System.out.println(" player 1 har nu "+player1.myWallet.UpdateMoney()+" ");
@@ -123,7 +128,7 @@ String Textdata;
         System.out.println("Tryk på enter spiller 2");
         String p2 = scanner.nextLine();
         System.out.println();
-        holder.sum();
+        //holder.sum();
 
         Comment();
         System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
@@ -132,6 +137,7 @@ String Textdata;
 
     public void updateNum(){
         randomNum = (int)(Math.random() * 6); //random nummer
+        randomNum2 = (int) (Math.random()*6);
     }
 
     public void Comment(){
