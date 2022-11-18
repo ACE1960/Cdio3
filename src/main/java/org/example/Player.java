@@ -12,6 +12,13 @@ private boolean[] ownerlist = new boolean[]{false,false,false,false,false,false,
 false,false,false,false,false,false,false,false,false,false,false,
 false,false,false,false,false,false,false,false};
 
+    GUI_Player player1;
+    GUI_Player player2;
+    GUI_Player player3;
+    GUI_Player player4;
+
+
+
     public Player(int money) {
         money2=money;
         myWallet = new Wallet(money2);
@@ -46,39 +53,43 @@ false,false,false,false,false,false,false,false};
     }
     public void setPlayerAmount(int x, GUI gui, GUI_Field[] board) {
         if(x==2) {
-            GUI_Player player1 = new GUI_Player("Billybob", 20);
+            player1 = new GUI_Player("Billybob", 20);
             gui.addPlayer(player1);
-            GUI_Player player2 = new GUI_Player("Michael Schumacher", 20);
+            player2 = new GUI_Player("Michael Schumacher", 20);
             gui.addPlayer(player2);
 
             board[0].setCar(player1, true);
             board[0].setCar(player2, true);
         }
         if(x==3) {
-            GUI_Player player1 = new GUI_Player("Billy", 18);
+             player1 = new GUI_Player("Billy", 18);
             gui.addPlayer(player1);
-            GUI_Player player2 = new GUI_Player("Beat", 18);
+            player2 = new GUI_Player("Beat", 18);
             gui.addPlayer(player2);
-            GUI_Player player3 = new GUI_Player("Justin", 18);
+            player3 = new GUI_Player("Justin", 18);
             gui.addPlayer(player3);
             board[0].setCar(player1, true);
             board[0].setCar(player2, true);
             board[0].setCar(player3, true);
         }
         if(x == 4) {
-            GUI_Player player1 = new GUI_Player("Billy", 16);
+             player1 = new GUI_Player("Billy", 16);
             gui.addPlayer(player1);
-            GUI_Player player2 = new GUI_Player("Beat", 16);
+            player2 = new GUI_Player("Beat", 16);
             gui.addPlayer(player2);
-            GUI_Player player3 = new GUI_Player("Your", 16);
+            player3 = new GUI_Player("Your", 16);
             gui.addPlayer(player3);
-            GUI_Player player4 = new GUI_Player("Willy", 16);
+            player4 = new GUI_Player("Willy", 16);
             gui.addPlayer(player4);
             board[0].setCar(player1, true);
             board[0].setCar(player2, true);
             board[0].setCar(player3, true);
             board[0].setCar(player4, true);
+            moveCar(gui,board);
         }
+    }
+    public void moveCar(GUI gui, GUI_Field[] board) {
+         board[7].setCar(player1,true);
     }
 }
 

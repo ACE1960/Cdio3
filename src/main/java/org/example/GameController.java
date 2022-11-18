@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class GameController {
     Holder holder;
 boolean Gaming = true;
-    int randomNum, randomNum2;
 
     Player player1,player2,player3,player4;
     Board board2;
@@ -27,7 +26,7 @@ boolean Gaming = true;
 
     Scanner scanner = new Scanner(System.in);
     boolean playing = true;
-    Player [] playerList;
+
 
     String inputText= "";
 String Textdata;
@@ -55,12 +54,9 @@ String Textdata;
 
 
             player1.setPlayerAmount(x,gui,board2);
-            updateNum();
+
             holder.sum(gui);
-            //gui.setDice(randomNum,randomNum2);
-
-            System.out.println(randomNum + "" + randomNum2);
-
+            player1.moveCar(gui,board2);
 
            /*
                         for(int i = 0; i <  parseTextdata; ++i) {
@@ -133,11 +129,6 @@ String Textdata;
         Comment();
         System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
 
-    }
-
-    public void updateNum(){
-        randomNum = (int)(Math.random() * 6); //random nummer
-        randomNum2 = (int) (Math.random()*6);
     }
 
     public void Comment(){
