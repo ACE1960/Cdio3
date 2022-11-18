@@ -55,8 +55,9 @@ String Textdata;
             System.out.println(x);
 
 
-           // player1.setPlayerAmount(x,gui,board2);
-            /*
+           player1.setPlayerAmount(x,gui,board2);
+
+           /*
                         for(int i = 0; i <  parseTextdata; ++i) {
                         }
                   //  }
