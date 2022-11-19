@@ -11,8 +11,18 @@ public class GameController {
     Holder holder;
 boolean Gaming = true;
 
-    Player player1,player2,player3,player4;
-    Player player;
+    //GUI_Player player1,player2,player3,player4;
+    Player player1;
+    Player player2;
+    Player player3;
+    Player player4;
+
+
+    GUI_Player playerz;
+    GUI_Player playery;
+    GUI_Player playerx;
+    GUI_Player kartoffelcheck;
+
 
 
 
@@ -20,10 +30,11 @@ boolean Gaming = true;
     public GameController(){
         holder=new Holder();
 
-        player1= new Player(20);
-        player2= new Player(20);
-        player3 = new Player(16);
-        player4= new Player(16);
+
+        this.player1 = new Player("Bob",20);
+        this.player2 = new Player("Billy",20);
+        player3 = new Player("Jurgen",20);
+        player4= new Player("Hej",20);
         board2= new Board();
         GameBoard gameBoard = new GameBoard(board);
     }
@@ -48,12 +59,13 @@ String Textdata;
         GUI gui = new GUI(board2);
 
 
-
         Textdata = "" + gui.getUserString(inputText);
         while (playing) {
 
             System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
             gui.getUserInteger(inputText);
+
+
 
             gui.showMessage("Du har indtastet :" + Textdata);
             // System.out.println(Textdata);
@@ -61,28 +73,24 @@ String Textdata;
             System.out.println(x);
 
 
-            player1.setPlayerAmount(x,gui,board2);
 
-
-
+//PROBLEMET LIGGER HER
+            player1.setPlayerAmount(x,gui,board2,player1);
 
             holder.sum();
             gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-            System.out.println(holder.getSum());
-            player1.moveSquare(holder.getSum());
 
-            player1.moveCar1(board2,holder.getSum());
+            //player1.moveSquare(holder.getSum());
+
+            player1.moveCar1(board2,holder.getSum(),player1);
 
             gui.getUserButtonPressed("ja", String.valueOf(true));
-            //player2.setPlayerAmount(x,gui,board2);
-            //holder.sum(gui);
-            //NUVÆRENDE BUG er at player1 bliver sat som setPlayerAmount
-            //player2.moveCar2(board2,holder.getSum());
-            //player2.moveCar2(board2,holder.getSum());
-            //gui.getUserButtonPressed("ja", String.valueOf(true));
-            //player2.moveCar2(board2,holder.getSum());
+            holder.sum();
+            gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+            player2.setPlayerAmount2(x,gui,board2,player2);
+            player2.moveCar2(board2, holder.getSum(),player2);
 
-            //player1.moveCar(gui,board2,holder.sum(gui));
+
 
            /*
                         for(int i = 0; i <  parseTextdata; ++i) {
@@ -144,7 +152,6 @@ String Textdata;
 
         Comment();
         System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
-
     }
 
     public void Comment(){

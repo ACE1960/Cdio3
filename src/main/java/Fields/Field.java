@@ -8,10 +8,10 @@ public class  Field {
     public  Field (String fieldName, int BoardNumber){
         this.fieldName=fieldName;
         this.BoardNumber=BoardNumber;
-        player1= new Player(16);
-        player2= new Player(16);
-        player3= new Player(16);
-        player4= new Player(16);
+        player1= new Player("Kata",20);
+        player2= new Player("Kat2",20);
+        player3= new Player("Kat3", 20);
+        player4= new Player("kat4",20);
     }
 
     public int getBoardNumber() {
