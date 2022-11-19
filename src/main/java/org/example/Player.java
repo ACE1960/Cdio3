@@ -76,18 +76,20 @@ public class Player extends GUI_Player {
     //position=ints[0];
     // return position;
     //  }
-    public void setPlayerAmount(int x, GUI gui, GUI_Field[] board, GUI_Player player) {
+    public void setPlayerAmount(int x, GUI gui, GUI_Field[] board, GUI_Player player1) {
 
 
 
         GUI_Car car1 = new GUI_Car(Color.RED, Color.BLACK, GUI_Car.Type.RACECAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
 
 
-        player = new GUI_Player("Sebastian",20,car1);
-        gui.addPlayer(player);
+        player1 = new GUI_Player("Sebastian",20,car1);
+        gui.addPlayer(player1);
 
-        board[0].setCar(player, true);
-        moveCar1(board, position2,player);
+
+        board[0].setCar(player1, true);
+        getCar();
+        moveCar1(board, position2,player1);
 
 
         //moveCar1(board, position);
@@ -96,12 +98,13 @@ public class Player extends GUI_Player {
         public void setPlayerAmount2 ( int x, GUI gui, GUI_Field[]board, GUI_Player player2){
                 GUI_Car car2 = new GUI_Car(Color.RED, Color.BLACK, GUI_Car.Type.RACECAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
 
-                player2 = new GUI_Player("tian", 20, car2);
+                player2 = new GUI_Player("tian", 20,car2);
                 gui.addPlayer(player2);
+
                 board[0].setCar(player2, true);
+                getCar();
                 moveCar2(board, position2,player2);
 
-                //car2.equals(player2);
 
             }
 
