@@ -58,26 +58,8 @@ public class GameController {
             player2= new Player(20);
 
             while (playing) {
-                gui.showMessage("Player1 tryk enter:");
-                gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                p1+=holder.sum();
-                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-               int m=p1%24;
-                System.out.println(m);
-                board2[(p1-holder.getSum())%24].removeAllCars();
-                board2[m].setCar(play1,true);
-
-                gui.showMessage("Player2 tryk enter:");
-                gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                p2+=holder.sum();
-                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                int n = p2%24;
-                System.out.println(n);
-                board2[(p2-holder.getSum())%24].removeAllCars();
-                board2[n].setCar(play2,true);
-
+                updateFlow1(play1);
+                updateFlow2(play2);
             }
         }
         else if (x==3){
@@ -98,38 +80,9 @@ public class GameController {
             player3 = new Player(18);
 
                 while (playing) {
-
-                    gui.showMessage("Player1 tryk enter:");
-                    gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                    p1+=holder.sum();
-                    gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                    int m=p1%24;
-                    System.out.println(m);
-                    board2[(p1-holder.getSum())%24].removeAllCars();
-                    board2[m].setCar(play1,true);
-
-
-                    gui.showMessage("Player2 tryk enter:");
-                    gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                    p2+=holder.sum();
-                    gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                    int n = p2%24;
-
-                    board2[(p2-holder.getSum())%24].removeAllCars();
-                    board2[n].setCar(play2,true);
-
-                    gui.showMessage("Player3 tryk enter:");
-                    gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                    p3+=holder.sum();
-                    gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                    int b = p3%24;
-                    System.out.println(n);
-                    board2[(p3-holder.getSum())%24].removeAllCars();
-                    board2[b].setCar(play3,true);
-
+                    updateFlow1(play1);
+                    updateFlow2(play2);
+                    updateFlow3(play3);
             }
         }
         else {
@@ -153,90 +106,59 @@ public class GameController {
             player3 = new Player(16);
             player4 = new Player(16);
 
-
-
             while (playing) {
-
-                gui.showMessage("Player1 tryk enter:");
-                gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                p1+=holder.sum();
-                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                int m=p1%24;
-                System.out.println(m);
-                board2[(p1-holder.getSum())%24].removeAllCars();
-                board2[m].setCar(play1,true);
-
-                gui.showMessage("Player2 tryk enter:");
-                gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                p2+=holder.sum();
-                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                int n = p2%24;
-                System.out.println(n);
-                board2[(p2-holder.getSum())%24].removeAllCars();
-                board2[n].setCar(play2,true);
-
-                gui.showMessage("Player3 tryk enter:");
-                gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                p3+=holder.sum();
-                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                int b = p3%24;
-                System.out.println(n);
-                board2[(p3-holder.getSum())%24].removeAllCars();
-                board2[b].setCar(play3,true);
-                gui.showMessage("Player4 tryk enter:");
-                gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
-
-                p4+=holder.sum();
-                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
-                int v = p4%24;
-                System.out.println(n);
-                board2[(p4-holder.getSum())%24].removeAllCars();
-                board2[v].setCar(play4,true);
+                updateFlow1(play1);
+                updateFlow2(play2);
+                updateFlow3(play3);
+                updateFlow4(play4);
             }
         }
     }
 
-    private void updateFlow1(){
-        gui.showMessage("Tryk enter for at slå terningerne");
-        System.out.println(gui.getUserButtonPressed(inputText, new String[]{"Tryk!"}));
-        holder.sum();
+    private void updateFlow1(GUI_Player play1){
+        gui.showMessage("Player1 tryk enter:");
+        gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
+
+        p1+=holder.sum();
+        gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+        int m=p1%24;
+        System.out.println(m);
+        board2[(p1-holder.getSum())%24].removeAllCars();
+        board2[m].setCar(play1,true);
 
     }
+    private void updateFlow2(GUI_Player play2){
+        gui.showMessage("Player2 tryk enter:");
+        gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
 
-
-    private void updateFlow2(){
-        System.out.println("Tryk på enter spiller 2");
-        String p2 = scanner.nextLine();
-        System.out.println();
-        //holder.sum();
-
-        System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
-
+        p2+=holder.sum();
+        gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+        int n = p2%24;
+        System.out.println(n);
+        board2[(p2-holder.getSum())%24].removeAllCars();
+        board2[n].setCar(play2,true);
     }
-    private void updateFlow3(){
-        System.out.println("Tryk på enter spiller 2");
-        String p2 = scanner.nextLine();
-        System.out.println();
-        //holder.sum();
-
-
-        System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
-
+    private void updateFlow3(GUI_Player play3){
+        gui.showMessage("Player3 tryk enter:");
+        gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
+        p3+=holder.sum();
+        gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+        int b = p3%24;
+        board2[(p3-holder.getSum())%24].removeAllCars();
+        board2[b].setCar(play3,true);
     }
-    private void updateFlow4(){
-        System.out.println("Tryk på enter spiller 2");
-        String p2 = scanner.nextLine();
-        System.out.println();
-        //holder.sum();
-
-
-        System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
-
+    private void updateFlow4(GUI_Player play4){
+        gui.showMessage("Player4 tryk enter:");
+        gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
+        p4+=holder.sum();
+        gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+        int v = p4%24;
+        board2[(p4-holder.getSum())%24].removeAllCars();
+        board2[v].setCar(play4,true);
     }
+public void setCarStart(){
 
+}
 
 }
 
