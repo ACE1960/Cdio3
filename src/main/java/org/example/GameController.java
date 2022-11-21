@@ -13,6 +13,8 @@ public class GameController {
     Holder holder;
     boolean Gaming = true;
     Player player1,player2,player3,player4;
+
+
     Board board3;
     private GameBoard[] board;
     boolean playing = true;
@@ -43,7 +45,6 @@ public class GameController {
         Textdata = "" + gui.getUserString(inputText);
         int x = Integer.parseInt(Textdata);
 
-
         if(x==2) {
             GUI_Car car1 = new GUI_Car(Color.BLUE, Color.BLACK, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
             GUI_Player play1 = new GUI_Player("Player1",20,  car1);
@@ -55,8 +56,7 @@ public class GameController {
 
             player1 = new Player(20);
             player2= new Player(20);
-            board2[0].setCar(play1,true);
-            board2[0].setCar(play2,true);
+
             while (playing) {
                 gui.showMessage("Player1 tryk enter:");
                 gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
@@ -65,12 +65,8 @@ public class GameController {
                 gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                int m=p1%24;
                 System.out.println(m);
-                board2[(p1-holder.getSum()%24)].removeAllCars();
+                board2[(p1-holder.getSum())%24].removeAllCars();
                 board2[m].setCar(play1,true);
-
-
-                //board2[m].setCar(play1,true);
-
 
                 gui.showMessage("Player2 tryk enter:");
                 gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
@@ -79,20 +75,8 @@ public class GameController {
                 gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                 int n = p2%24;
                 System.out.println(n);
-                board2[(p2-holder.getSum()%24)].removeAllCars();
+                board2[(p2-holder.getSum())%24].removeAllCars();
                 board2[n].setCar(play2,true);
-
-                //board2[n].setCar(play2,true);
-
-
-
-
-
-
-
-
-
-
 
             }
         }
@@ -106,15 +90,12 @@ public class GameController {
             gui.addPlayer(play2);
 
             GUI_Car car3 = new GUI_Car(Color.BLUE, Color.WHITE, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play3 = new GUI_Player("Player3",18,  car2);
+            GUI_Player play3 = new GUI_Player("Player3",18,  car3);
             gui.addPlayer(play3);
 
             player1 = new Player(18);
             player2= new Player(18);
             player3 = new Player(18);
-
-
-            startCheck(play1,play2,play3);
 
                 while (playing) {
 
@@ -125,7 +106,7 @@ public class GameController {
                     gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                     int m=p1%24;
                     System.out.println(m);
-                    board2[(p1-holder.getSum()%24)].removeAllCars();
+                    board2[(p1-holder.getSum())%24].removeAllCars();
                     board2[m].setCar(play1,true);
 
 
@@ -135,8 +116,8 @@ public class GameController {
                     p2+=holder.sum();
                     gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                     int n = p2%24;
-                    System.out.println(n);
-                    board2[(p2-holder.getSum()%24)].removeAllCars();
+
+                    board2[(p2-holder.getSum())%24].removeAllCars();
                     board2[n].setCar(play2,true);
 
                     gui.showMessage("Player3 tryk enter:");
@@ -146,7 +127,7 @@ public class GameController {
                     gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                     int b = p3%24;
                     System.out.println(n);
-                    board2[(p3-holder.getSum()%24)].removeAllCars();
+                    board2[(p3-holder.getSum())%24].removeAllCars();
                     board2[b].setCar(play3,true);
 
             }
@@ -172,6 +153,8 @@ public class GameController {
             player3 = new Player(16);
             player4 = new Player(16);
 
+
+
             while (playing) {
 
                 gui.showMessage("Player1 tryk enter:");
@@ -191,7 +174,7 @@ public class GameController {
                 gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                 int n = p2%24;
                 System.out.println(n);
-                board2[(p2-holder.getSum()%24)].removeAllCars();
+                board2[(p2-holder.getSum())%24].removeAllCars();
                 board2[n].setCar(play2,true);
 
                 gui.showMessage("Player3 tryk enter:");
@@ -201,7 +184,7 @@ public class GameController {
                 gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                 int b = p3%24;
                 System.out.println(n);
-                board2[(p3-holder.getSum()%24)].removeAllCars();
+                board2[(p3-holder.getSum())%24].removeAllCars();
                 board2[b].setCar(play3,true);
                 gui.showMessage("Player4 tryk enter:");
                 gui.getUserButtonPressed(inputText, new String[]{"Tryk!"});
@@ -210,25 +193,11 @@ public class GameController {
                 gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
                 int v = p4%24;
                 System.out.println(n);
-                board2[(p4-holder.getSum()%24)].removeAllCars();
+                board2[(p4-holder.getSum())%24].removeAllCars();
                 board2[v].setCar(play4,true);
-
-
-
             }
-
-
         }
-
     }
-
-
-
-
-
-
-
-
 
     private void updateFlow1(){
         gui.showMessage("Tryk enter for at slå terningerne");
@@ -267,12 +236,7 @@ public class GameController {
         System.out.println(" player 2 har nu "+player2.myWallet.UpdateMoney()+" ");
 
     }
-    private void startCheck(GUI_Player play1, GUI_Player play2, GUI_Player play3){
-        board2[0].setCar(play1, true);
-        board2[0].setCar(play2, true);
-        board2[0].setCar(play3, true);
 
-    }
 
 }
 

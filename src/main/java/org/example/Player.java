@@ -15,15 +15,11 @@ private boolean[] ownerlist = new boolean[]{false,false,false,false,false,false,
 false,false,false,false,false,false,false,false,false,false,false,
 false,false,false,false,false,false,false,false};
 
-
-
     GUI_Player player;
     GUI_Player player1;
     GUI_Player player2;
     GUI_Player player3;
     GUI_Player player4;
-
-
 
     public Player(int money) {
         money2=money;
@@ -36,7 +32,6 @@ false,false,false,false,false,false,false,false};
         boolean m =ownerlist[bool];
         return m;
     }
-
     public void setOwnerlist(int bool) {
    ownerlist[bool]= true;
     }
