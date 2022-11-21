@@ -4,6 +4,8 @@ import gui_fields.GUI_Player;
 import gui_main.GUI;
 
 public class Player {
+
+
    public Wallet myWallet;
     private int position;
     private int position2;
