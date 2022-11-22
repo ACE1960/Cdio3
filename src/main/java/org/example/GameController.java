@@ -1,5 +1,6 @@
 package org.example;
 
+import Fields.Field;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Ownable;
@@ -7,6 +8,7 @@ import gui_fields.GUI_Player;
 import gui_main.GUI;
 
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
 
@@ -59,8 +61,41 @@ public class GameController {
             player2= new Player(20);
 
             while (playing) {
-                updateFlow1(play1);
-                updateFlow2(play2);
+
+                gui.getUserButtonPressed(inputText, new String[]{"Player1 tryk enter:"});
+                p1+=holder.sum();
+                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+                int m=p1%24;
+                board2[(p1-holder.getSum())%24].removeAllCars();
+                board2[m].setCar(play1,true);
+                Field playerField1 = board3.fieldlist[m];
+                playerField1.landOndField(player1,player2);
+                play1.setBalance(player1.myWallet.getMoney());
+                play2.setBalance(player2.myWallet.getMoney());
+                if(player1.getOwnerlist(m)){
+                    gui.showMessage("Player1 is the new owner!");
+                }
+               else{
+                    gui.showMessage("Player1 cough up the rent!");
+                }
+
+
+                gui.getUserButtonPressed(inputText, new String[]{"Player2 tryk enter:"});
+                p2+=holder.sum();
+                gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
+                int n = p2%24;
+                System.out.println(n);
+                board2[(p2-holder.getSum())%24].removeAllCars();
+                board2[n].setCar(play2,true);
+                Field playerField2 = board3.fieldlist[n];
+                playerField2.landOndField(player2,player1);
+                play2.setBalance(player2.myWallet.getMoney());
+                play1.setBalance(player1.myWallet.getMoney());
+                if(player1.getOwnerlist(n))
+                gui.showMessage("Player2 is the new owner!");
+else
+                gui.showMessage("Player2 cough up the rent!");
+
             }
         }
         else if (x==3){
@@ -123,9 +158,11 @@ public class GameController {
         p1+=holder.sum();
         gui.setDice(holder.die1.getFacevalue(),holder.die2.getFacevalue());
         int m=p1%24;
-        System.out.println(m);
         board2[(p1-holder.getSum())%24].removeAllCars();
         board2[m].setCar(play1,true);
+        Field playerField1 = board3.fieldlist[m];
+        playerField1.landOndField(player1,player2);
+        play1.setBalance(player1.myWallet.getMoney());
 
     }
     private void updateFlow2(GUI_Player play2){
@@ -138,6 +175,10 @@ public class GameController {
         System.out.println(n);
         board2[(p2-holder.getSum())%24].removeAllCars();
         board2[n].setCar(play2,true);
+        Field playerField2 = board3.fieldlist[n];
+        playerField2.landOndField(player2,player1);
+        play2.setBalance(player2.myWallet.getMoney());
+
     }
     private void updateFlow3(GUI_Player play3){
         gui.showMessage("Player3 tryk enter:");
