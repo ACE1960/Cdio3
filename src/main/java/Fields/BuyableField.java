@@ -5,10 +5,10 @@ import org.example.Player;
 
 public class BuyableField extends Field {
     private  int cost;
-    private boolean owned=false;
+
     Player player;
     private String color;
-    private  int rentMoney;
+
 
     public BuyableField(String fieldName,String color, int BoardNumber,int cost){
         super(fieldName,BoardNumber);
@@ -70,6 +70,13 @@ public class BuyableField extends Field {
     @Override
     // if player can afford the house scenario.
     public void landOndField(Player player1,Player player2) {
+        /*
+         if(player1.isInJail()) {
+            player1.myWallet.setSquareMoney(-1);
+            player1.myWallet.UpdateMoney();
+            player1.setInJail(false);
+        }
+         */
        if (owned == false) {
            if (player1.myWallet.getMoney() > cost) {
                player1.myWallet.setSquareMoney(-cost);
@@ -97,17 +104,17 @@ public class BuyableField extends Field {
                    player2.myWallet.UpdateMoney();
                }
 */
-               if(player1.myWallet.getMoney()>rentMoney) {
-                   player1.myWallet.setSquareMoney(-rentMoney);
+               if(player1.myWallet.getMoney()>cost) {
+                   player1.myWallet.setSquareMoney(-cost);
                    player1.myWallet.UpdateMoney();
-                   player2.myWallet.setSquareMoney(rentMoney);
+                   player2.myWallet.setSquareMoney(cost);
                    player2.myWallet.UpdateMoney();
                    // Moiz
                    
                }
                else {
                    // sceario where player cannot afford to pay rent.
-                   player1.myWallet.setSquareMoney(-rentMoney);
+                   player1.myWallet.setSquareMoney(-cost);
                    player1.myWallet.UpdateMoney();
                    player2.myWallet.setSquareMoney(player1.myWallet.getSquareMoney());
                    player2.myWallet.UpdateMoney();
@@ -118,6 +125,13 @@ public class BuyableField extends Field {
 
     @Override
     public void landOndField(Player player1,Player player2,Player player3) {
+             /*
+         if(player1.isInJail()) {
+            player1.myWallet.setSquareMoney(-1);
+            player1.myWallet.UpdateMoney();
+            player1.setInJail(false);
+        }
+         */
         if (owned == false) {
             if (player1.myWallet.getMoney() > cost) {
                 player1.myWallet.setSquareMoney(-cost);
@@ -137,13 +151,13 @@ public class BuyableField extends Field {
             if (!player1.getOwnerlist(getBoardNumber())) {
                 if(player2.getOwnerlist(getBoardNumber())) {
                     if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
-                        player2.myWallet.setSquareMoney(rentMoney);
+                        player2.myWallet.setSquareMoney(cost);
                         player2.myWallet.UpdateMoney();
                     }
                     else{
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
                         player2.myWallet.setSquareMoney(player1.myWallet.getMoney());
                         player2.myWallet.UpdateMoney();
@@ -151,13 +165,13 @@ public class BuyableField extends Field {
                 }
                 else  {
                     if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
-                        player3.myWallet.setSquareMoney(rentMoney);
+                        player3.myWallet.setSquareMoney(cost);
                         player3.myWallet.UpdateMoney();
                     }
                     else{
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
                         player3.myWallet.setSquareMoney(player1.myWallet.getMoney());
                         player3.myWallet.UpdateMoney();
@@ -168,6 +182,13 @@ public class BuyableField extends Field {
     }
     @Override
     public void landOndField(Player player1,Player player2,Player player3, Player player4) {
+          /*
+         if(player1.isInJail()) {
+            player1.myWallet.setSquareMoney(-1);
+            player1.myWallet.UpdateMoney();
+            player1.setInJail(false);
+        }
+         */
         if (owned==false) {
             if (owned == false) {
                 if (player1.myWallet.getMoney() > cost) {
@@ -190,13 +211,13 @@ public class BuyableField extends Field {
 
                 if(player2.getOwnerlist(getBoardNumber())) {
                     if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
-                        player2.myWallet.setSquareMoney(rentMoney);
+                        player2.myWallet.setSquareMoney(cost);
                         player2.myWallet.UpdateMoney();
                     }
                     else{
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
                         player2.myWallet.setSquareMoney(player1.myWallet.getMoney());
                         player2.myWallet.UpdateMoney();
@@ -205,13 +226,13 @@ public class BuyableField extends Field {
                 }
                 else if (player3.getOwnerlist(getBoardNumber()))  {
                     if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
-                        player3.myWallet.setSquareMoney(rentMoney);
+                        player3.myWallet.setSquareMoney(cost);
                         player3.myWallet.UpdateMoney();
                     }
                     else{
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
                         player3.myWallet.setSquareMoney(player1.myWallet.getMoney());
                         player3.myWallet.UpdateMoney();
@@ -219,13 +240,13 @@ public class BuyableField extends Field {
                 }
                 else{
                     if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
-                        player4.myWallet.setSquareMoney(rentMoney);
+                        player4.myWallet.setSquareMoney(cost);
                         player4.myWallet.UpdateMoney();
                     }
                     else{
-                        player1.myWallet.setSquareMoney(-rentMoney);
+                        player1.myWallet.setSquareMoney(-cost);
                         player1.myWallet.UpdateMoney();
                         player4.myWallet.setSquareMoney(player1.myWallet.getMoney());
                         player4.myWallet.UpdateMoney();

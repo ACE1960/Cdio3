@@ -4,14 +4,12 @@ public class  Field {
     private String fieldName;
     protected final  int BoardNumber;
     Player player1,player2,player3,player4;
+    protected boolean owned=false;
 
     public  Field (String fieldName, int BoardNumber){
         this.fieldName=fieldName;
         this.BoardNumber=BoardNumber;
-        player1= new Player(16);
-        player2= new Player(16);
-        player3= new Player(16);
-        player4= new Player(16);
+
     }
 
     public int getBoardNumber() {
@@ -27,4 +25,7 @@ public class  Field {
 
     }
 
+    public boolean isOwned() {
+        return owned;
+    }
 }
