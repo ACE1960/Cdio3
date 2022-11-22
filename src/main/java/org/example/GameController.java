@@ -55,13 +55,19 @@ public class GameController {
 
             player1 = new Player(20);
             player2= new Player(20);
-
+            board2[0].setCar(play1,true);
+            board2[0].setCar(play2,true);
             while (playing) {
                 gui.showMessage("Player1 tryk enter:");
                 p1 += holder.sum();
                 gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
                 int m = p1 % 24;
-                board2[(p1 - holder.getSum()) % 24].removeAllCars();
+                if(board2[(p1 - holder.getSum()) % 24].hasCar(play2)){
+                    board2[(p1 - holder.getSum()) % 24].removeAllCars();
+                    board2[(p1 - holder.getSum()) % 24].setCar(play2,true);
+                }
+                else
+                    board2[(p1 - holder.getSum()) % 24].removeAllCars();
                 board2[m].setCar(play1, true);
 
                 Field playerField1 = board3.fieldlist[m];
@@ -70,17 +76,24 @@ public class GameController {
                 play2.setBalance(player2.myWallet.getMoney());
                 if(playerField1.isOwned()&&player1.getOwnerlist(m+1)){
                     gui.showMessage("Player1 owns this property");
+
                 }
                 else if (playerField1.isOwned()&& !player1.getOwnerlist(m+1))
                     gui.showMessage("This property belongs to player2, pay rent player1");
                 else
                     System.out.println();
 
+
                 gui.showMessage("Player2 tryk enter:");
                 p2 += holder.sum();
                 gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
                 int n = p2 % 24;
-                board2[(p2 - holder.getSum()) % 24].removeAllCars();
+                if(board2[(p2 - holder.getSum()) % 24].hasCar(play1)){
+                    board2[(p2 - holder.getSum()) % 24].removeAllCars();
+                    board2[(p2 - holder.getSum()) % 24].setCar(play1,true);
+                }
+                else
+                    board2[(p2 - holder.getSum()) % 24].removeAllCars();
                 board2[n].setCar(play2, true);
                 Field playerField2 = board3.fieldlist[n];
                 playerField2.landOndField(player2, player1);
@@ -199,8 +212,7 @@ public class GameController {
 public void setCarStart(){
 
 }
-
 }
 
-
+// vi skal måske laver flere kontroller klasser
 

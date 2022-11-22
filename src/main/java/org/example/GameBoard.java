@@ -16,14 +16,6 @@ import java.awt.Color;
      public GameBoard(GameBoard[] board2) {
      }
 
-     int Brun[] ={2,3};
-     int Lyseblå[] ={5,6};
-     int Lilla[] ={8,9};
-     int Orange[] ={11,12};
-     int Rød[] ={14,15};
-     int Gul[] ={17,18};
-     int Grøn[] ={17,18};
-
 
      public static GUI_Field[] makeFields() {
          GUI_Field[] board = new GUI_Field[24];
