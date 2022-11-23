@@ -1,6 +1,8 @@
+
 package Fields;
 import org.example.*;
 public class  Field {
+    protected boolean ischance =false;
     private String fieldName;
     protected final  int BoardNumber;
     Player player1,player2,player3,player4;
