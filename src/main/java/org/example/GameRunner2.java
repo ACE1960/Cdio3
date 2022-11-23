@@ -14,7 +14,6 @@ public class GameRunner2 {
         holder = new Holder();
         board3 = new Board();
     }
-
     public void GameRun2(GUI_Player play1, GUI_Player play2, GUI_Field[] board2, GUI gui, Player player1, Player player2) {
         if (winner == false) {
             gui.showMessage("Player1 tryk enter:");

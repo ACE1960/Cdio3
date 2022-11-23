@@ -20,7 +20,7 @@ public class GameController {
     private GameBoard [] board4;
     GUI_Field[] board1,board2= new GUI_Field[24];
     GameBoard gameBoard;
-    public GameController(){
+    public GameController() {
         holder=new Holder();
         board3= new Board();
         gameRunner2 = new GameRunner2();
@@ -57,8 +57,6 @@ public class GameController {
                     gameRunner2.setWinner(gui);
                     break;
                 }
-                    //gameRunner2.setWinner(gui,true);
-
                 }
             }
 
@@ -114,7 +112,6 @@ public class GameController {
             board2[0].setCar(play2,true);
             board2[0].setCar(play3,true);
             board2[0].setCar(play4,true);
-
 
             while (playing) {
                 gameRunner4.GameRun4(play1,play2,play3,play4,board2,gui,player1,player2,player3,player4);
