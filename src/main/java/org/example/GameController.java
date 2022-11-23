@@ -3,17 +3,16 @@ package org.example;
 import Fields.Field;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
-import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
 
 public class GameController {
     Holder holder;
+    GameRunner2 gameRunner2;
     boolean Gaming = true;
     Player player1,player2,player3,player4;
     Board board3;
@@ -31,6 +30,7 @@ public class GameController {
     public GameController(){
         holder=new Holder();
         board3= new Board();
+        gameRunner2 = new GameRunner2();
         board1 = GameBoard.makeFields();
         for(int i = 0; i < board2.length; ++i) {
             board2[i] = board1[i];
@@ -58,54 +58,9 @@ public class GameController {
             board2[0].setCar(play1,true);
             board2[0].setCar(play2,true);
             while (playing) {
-                gui.showMessage("Player1 tryk enter:");
-                p1 += holder.sum();
-                gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
-                int m = p1 % 24;
-                if(board2[(p1 - holder.getSum()) % 24].hasCar(play2)){
-                    board2[(p1 - holder.getSum()) % 24].removeAllCars();
-                    board2[(p1 - holder.getSum()) % 24].setCar(play2,true);
-                }
-                else
-                    board2[(p1 - holder.getSum()) % 24].removeAllCars();
-                board2[m].setCar(play1, true);
-
-                Field playerField1 = board3.fieldlist[m];
-                playerField1.landOndField(player1, player2);
-                play1.setBalance(player1.myWallet.getMoney());
-                play2.setBalance(player2.myWallet.getMoney());
-                if(playerField1.isOwned()&&player1.getOwnerlist(m+1)){
-                    gui.showMessage("Player1 owns this property");
-
-                }
-                else if (playerField1.isOwned()&& !player1.getOwnerlist(m+1))
-                    gui.showMessage("This property belongs to player2, pay rent player1");
-                else
-                    System.out.println();
-
-
-                gui.showMessage("Player2 tryk enter:");
-                p2 += holder.sum();
-                gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
-                int n = p2 % 24;
-                if(board2[(p2 - holder.getSum()) % 24].hasCar(play1)){
-                    board2[(p2 - holder.getSum()) % 24].removeAllCars();
-                    board2[(p2 - holder.getSum()) % 24].setCar(play1,true);
-                }
-                else
-                    board2[(p2 - holder.getSum()) % 24].removeAllCars();
-                board2[n].setCar(play2, true);
-                Field playerField2 = board3.fieldlist[n];
-                playerField2.landOndField(player2, player1);
-                play2.setBalance(player2.myWallet.getMoney());
-                play1.setBalance(player1.myWallet.getMoney());
-                if(playerField2.isOwned()&&player2.getOwnerlist(n+1)){
-                    gui.showMessage("Player2 owns this property");
-                }
-                else if (playerField2.isOwned()&& !player2.getOwnerlist(n+1))
-                    gui.showMessage("This property belongs to player1, pay rent player2");
-                else
-                    System.out.println();
+                gameRunner2.GameRun2(play1,play2,board2,gui,player1,player2);
+                //TestCars(play1, play2);
+                //TestCars(play1,play2);
             }
 
         }
@@ -209,10 +164,9 @@ public class GameController {
         board2[(p4-holder.getSum())%24].removeAllCars();
         board2[v].setCar(play4,true);
     }
-public void setCarStart(){
 
 }
-}
+
 
 // vi skal måske laver flere kontroller klasser
 
