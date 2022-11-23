@@ -8,20 +8,18 @@ import gui_main.GUI;
 
 
 import java.awt.*;
-import java.util.Scanner;
+
 
 public class GameController {
     Holder holder;
     GameRunner2 gameRunner2;
-    boolean Gaming = true;
+    GameRunner3 gameRunner3;
     Player player1,player2,player3,player4;
     Board board3;
     private GameBoard[] board;
     boolean playing = true;
-    Scanner scanner;
     String inputText= "";
     String Textdata;
-    Boolean start = true;
     int p1,p2,p3,p4;
     GUI gui;
     private GameBoard [] board4;
@@ -31,13 +29,13 @@ public class GameController {
         holder=new Holder();
         board3= new Board();
         gameRunner2 = new GameRunner2();
+        gameRunner3 = new GameRunner3();
         board1 = GameBoard.makeFields();
         for(int i = 0; i < board2.length; ++i) {
             board2[i] = board1[i];
         }
         gameBoard = new GameBoard(board4);
         gui = new GUI(board2);
-        scanner = new Scanner(System.in);
     }
 
     public void play() {
@@ -59,10 +57,7 @@ public class GameController {
             board2[0].setCar(play2,true);
             while (playing) {
                 gameRunner2.GameRun2(play1,play2,board2,gui,player1,player2);
-                //TestCars(play1, play2);
-                //TestCars(play1,play2);
             }
-
         }
         else if (x==3){
             GUI_Car car1 = new GUI_Car(Color.RED, Color.RED, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
@@ -82,9 +77,7 @@ public class GameController {
             player3 = new Player(18);
 
                 while (playing) {
-                    updateFlow1(play1);
-                    updateFlow2(play2);
-                    updateFlow3(play3);
+                    gameRunner3.GameRun3(play1,play2,play3,board2,gui,player1,player2,player3);
             }
         }
         else {
