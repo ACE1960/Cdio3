@@ -3,17 +3,11 @@ import Fields.Field;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-public class GameRunner3 {
-    int p1, p2, p3;
-    Holder holder;
-    Board board3;
+public class GameRunner3 extends GameRunner2 {
+    int p3;
 
-    public GameRunner3() {
-        holder = new Holder();
-        board3 = new Board();
-    }
     public void GameRun3(GUI_Player play1, GUI_Player play2, GUI_Player play3, GUI_Field[] board2, GUI gui, Player player1, Player player2, Player player3) {
-        gui.showMessage("Player1 tryk enter:");
+        gui.showMessage("Player 1 tryk enter:");
         p1 += holder.sum();
         gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
         int m = p1 % 24;
@@ -41,13 +35,13 @@ public class GameRunner3 {
             gui.showMessage("Player1 owns this property");
 
         } else if (playerField1.isOwned() && player2.getOwnerlist(m + 1))
-            gui.showMessage("This property belongs to player2, pay rent.");
+            gui.showMessage("This property belongs to player 2, pay rent.");
         else if (playerField1.isOwned() && player2.getOwnerlist(m + 1)) {
-            gui.showMessage("This property belongs to player2, pay rent.");
+            gui.showMessage("This property belongs to player 3, pay rent.");
         } else
             System.out.println();
 
-        gui.showMessage("Player2 tryk enter:");
+        gui.showMessage("Player 2 tryk enter:");
         p2 += holder.sum();
         gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
         int n = p2 % 24;
@@ -71,17 +65,17 @@ public class GameRunner3 {
         play1.setBalance(player1.myWallet.getMoney());
         play2.setBalance(player2.myWallet.getMoney());
         play3.setBalance(player3.myWallet.getMoney());
-        if (playerField2.isOwned() && player2.getOwnerlist(n + 1)) {
-            gui.showMessage("Player2 owns this property");
+        if (playerField2.isOwned() && player1.getOwnerlist(n + 1)) {
+            gui.showMessage("Player 2 owns this property");
 
         } else if (playerField2.isOwned() && player2.getOwnerlist(n + 1))
-            gui.showMessage("This property belongs to player1, pay rent.");
+            gui.showMessage("This property belongs to player 1, Give up money.");
         else if (playerField2.isOwned() && player3.getOwnerlist(n + 1)) {
-            gui.showMessage("This property belongs to player3, pay rent.");
+            gui.showMessage("This property belongs to player 3, bitch better have my money");
         } else
             System.out.println();
 
-        gui.showMessage("Player3 tryk enter:");
+        gui.showMessage("Player 3 tryk enter:");
         p3 += holder.sum();
         gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
         int o = p3 % 24;
@@ -106,12 +100,12 @@ public class GameRunner3 {
         play2.setBalance(player2.myWallet.getMoney());
         play3.setBalance(player3.myWallet.getMoney());
         if (playerField3.isOwned() && player3.getOwnerlist(o + 1)) {
-            gui.showMessage("Player3 owns this property");
+            gui.showMessage("Player 3 owns this property");
 
         } else if (playerField3.isOwned() && player2.getOwnerlist(o + 1))
             gui.showMessage("This property belongs to player2, pay rent.");
         else if (playerField3.isOwned() && player1.getOwnerlist(o + 1)) {
-            gui.showMessage("This property belongs to player1, pay rent.");
+            gui.showMessage("This property belongs to player 1, pay rent.");
         } else
             System.out.println();
 

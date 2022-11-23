@@ -3,14 +3,8 @@ import Fields.Field;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-public class GameRunner4 {
+public class GameRunner4 extends GameRunner2 {
     int p1,p2,p3,p4;
-    Holder holder;
-    Board board3;
-    public GameRunner4(){
-        holder=new Holder();
-        board3= new Board();
-    }
     public void GameRun4(GUI_Player play1, GUI_Player play2,GUI_Player play3, GUI_Player play4, GUI_Field[] board2, GUI gui, Player player1, Player player2, Player player3, Player player4){
         gui.showMessage("Player1 tryk enter:");
         p1 += holder.sum();
