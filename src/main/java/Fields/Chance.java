@@ -1,32 +1,42 @@
 package Fields;
-import gui_main.GUI;
+
 import org.example.Player;
 import org.example.Wallet;
 
-
-
 public class Chance extends UnbuyableField{
-    private Chancekort chance =new Chancekort();
-
-
-
-
     public Chance (String fieldName, int BoardNumber){
         super(fieldName,BoardNumber);
-        System.out.println(chance.traekKort()); //Printer et tilfældigt kort
+
     }
-
-
     @Override
     public void landOndField(Player player1,Player player2) {
+         /*
+         if(player1.isInJail()) {
+            player1.myWallet.setSquareMoney(-1);
+            player1.myWallet.UpdateMoney();
+            player1.setInJail(false);
+        }
+         */
 
     }
-
     public void landOndField(Player player1,Player player2,Player player3) {
-        //System.out.println(chancekort[random.nextInt(chancekort.length)]);
+          /*
+         if(player1.isInJail()) {
+            player1.myWallet.setSquareMoney(-1);
+            player1.myWallet.UpdateMoney();
+            player1.setInJail(false);
+        }
+         */
+
     }
     public void landOndField(Player player1,Player player2,Player player3, Player player4) {
-        //System.out.println(chancekort[random.nextInt(chancekort.length)]);
-    }
+           /*
+         if(player1.isInJail()) {
+            player1.myWallet.setSquareMoney(-1);
+            player1.myWallet.UpdateMoney();
+            player1.setInJail(false);
+        }
+         */
 
+    }
 }
