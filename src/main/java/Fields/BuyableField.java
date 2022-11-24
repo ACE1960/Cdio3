@@ -70,13 +70,13 @@ public class BuyableField extends Field {
     @Override
     // if player can afford the house scenario.
     public void landOndField(Player player1,Player player2) {
-        /*
+
          if(player1.isInJail()) {
             player1.myWallet.setSquareMoney(-1);
             player1.myWallet.UpdateMoney();
             player1.setInJail(false);
         }
-         */
+
         if (owned == false) {
             if (player1.myWallet.getMoney() > cost) {
                 player1.myWallet.setSquareMoney(-cost);
@@ -121,13 +121,13 @@ public class BuyableField extends Field {
     }
         @Override
         public void landOndField (Player player1, Player player2, Player player3){
-             /*
+
          if(player1.isInJail()) {
             player1.myWallet.setSquareMoney(-1);
             player1.myWallet.UpdateMoney();
             player1.setInJail(false);
         }
-         */
+
             if (owned == false) {
                 if (player1.myWallet.getMoney() > cost) {
                     player1.myWallet.setSquareMoney(-cost);
@@ -173,13 +173,13 @@ public class BuyableField extends Field {
 
         @Override
         public void landOndField (Player player1, Player player2, Player player3, Player player4){
-          /*
+
          if(player1.isInJail()) {
             player1.myWallet.setSquareMoney(-1);
             player1.myWallet.UpdateMoney();
             player1.setInJail(false);
         }
-         */
+
             if (owned == false) {
                 if (owned == false) {
                     if (player1.myWallet.getMoney() > cost) {

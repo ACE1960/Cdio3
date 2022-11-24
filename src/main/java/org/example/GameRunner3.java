@@ -40,9 +40,10 @@ public class GameRunner3 extends GameRunner2 {
 
         if (playerField1.isOwned() && player1.getOwnerlist(m + 1)) {
             gui.showMessage("Player1 owns this property");
-
         } else if (playerField1.isOwned() && player2.getOwnerlist(m + 1))
             gui.showMessage("This property belongs to player 2, pay rent.");
+        else if (player1.isInJail())
+            gui.showMessage("You in jail, pay a fine of 1 next round.");
         else if (playerField1.isOwned() && player2.getOwnerlist(m + 1)) {
             gui.showMessage("This property belongs to player 3, pay rent.");
         } else
@@ -79,6 +80,8 @@ public class GameRunner3 extends GameRunner2 {
 
         } else if (playerField2.isOwned() && player2.getOwnerlist(n + 1))
             gui.showMessage("This property belongs to player 1, Give up money.");
+        else if (player2.isInJail())
+            gui.showMessage("You in jail, pay a fine of 1 next round.");
         else if (playerField2.isOwned() && player3.getOwnerlist(n + 1)) {
             gui.showMessage("This property belongs to player 3, bitch better have my money");
         } else
@@ -115,6 +118,8 @@ public class GameRunner3 extends GameRunner2 {
 
         } else if (playerField3.isOwned() && player2.getOwnerlist(o + 1))
             gui.showMessage("This property belongs to player2, pay rent.");
+        else if (player3.isInJail())
+            gui.showMessage("You in jail, pay a fine of 1 next round.");
         else if (playerField3.isOwned() && player1.getOwnerlist(o + 1)) {
             gui.showMessage("This property belongs to player 1, pay rent.");
         } else

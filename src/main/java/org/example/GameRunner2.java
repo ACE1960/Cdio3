@@ -45,6 +45,8 @@ public class GameRunner2 {
 
             } else if (playerField1.isOwned() && !player1.getOwnerlist(m + 1))
                 gui.showMessage("This property belongs to player2, pay rent player1");
+            else if (player1.isInJail())
+                gui.showMessage("You in jail, pay a fine of 1 next round.");
             else
                 System.out.println();
 
@@ -67,6 +69,8 @@ public class GameRunner2 {
                 gui.showMessage("Player2 owns this property");
             } else if (playerField2.isOwned() && !player2.getOwnerlist(n + 1))
                 gui.showMessage("This property belongs to player1, pay rent player2");
+            else if (player2.isInJail())
+                gui.showMessage("You in jail, pay a fine of 1 next round.");
             else
                 System.out.println();
 

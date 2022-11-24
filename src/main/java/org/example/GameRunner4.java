@@ -53,6 +53,8 @@ public class GameRunner4 extends GameRunner2 {
             gui.showMessage("Player1 owns this property");
         } else if (playerField1.isOwned() && player2.getOwnerlist(m + 1))
             gui.showMessage("This property belongs to player2, pay rent.");
+        else if (player1.isInJail())
+            gui.showMessage("You in jail, pay a fine of 1 next round.");
         else if (playerField1.isOwned() && player3.getOwnerlist(m + 1)) {
             gui.showMessage("This property belongs to player3, pay rent.");
         } else if (playerField1.isOwned() && player4.getOwnerlist(m + 1)) {
@@ -106,6 +108,8 @@ public class GameRunner4 extends GameRunner2 {
             gui.showMessage("Player2 owns this property");
         } else if (playerField2.isOwned() && player1.getOwnerlist(n + 1))
             gui.showMessage("This property belongs to player1, pay rent.");
+        else if (player2.isInJail())
+            gui.showMessage("You in jail, pay a fine of 1 next round.");
         else if (playerField2.isOwned() && player3.getOwnerlist(m + 1)) {
             gui.showMessage("This property belongs to player3, pay rent.");
         } else if (playerField2.isOwned() && player4.getOwnerlist(n + 1)) {
@@ -158,6 +162,8 @@ public class GameRunner4 extends GameRunner2 {
             gui.showMessage("Player3 owns this property");
         } else if (playerField3.isOwned() && player2.getOwnerlist(o + 1))
             gui.showMessage("This property belongs to player2, pay rent.");
+        else if (player3.isInJail())
+            gui.showMessage("You in jail, pay a fine of 1 next round.");
         else if (playerField3.isOwned() && player1.getOwnerlist(o + 1)) {
             gui.showMessage("This property belongs to player1, pay rent.");
         } else if (playerField3.isOwned() && player4.getOwnerlist(o + 1)) {
@@ -212,6 +218,8 @@ public class GameRunner4 extends GameRunner2 {
             gui.showMessage("Player4 owns this property");
         } else if (playerField4.isOwned() && player1.getOwnerlist(p + 1))
             gui.showMessage("This property belongs to player1, pay rent.");
+        else if (player4.isInJail())
+            gui.showMessage("You in jail, pay a fine of 1 next round.");
         else if (playerField4.isOwned() && player3.getOwnerlist(p + 1)) {
             gui.showMessage("This property belongs to player3, pay rent.");
         } else if (playerField4.isOwned() && player2.getOwnerlist(p + 1)) {

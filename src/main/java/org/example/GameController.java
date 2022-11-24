@@ -36,86 +36,87 @@ public class GameController {
 
     public void play() throws InterruptedException {
         Textdata = "" + gui.getUserString(inputText);
-        int x = Integer.parseInt(Textdata);
+        try {
 
-        if(x==2) {
-            GUI_Car car1 = new GUI_Car(Color.BLUE, Color.BLACK, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play1 = new GUI_Player("Player1", 20, car1);
-            gui.addPlayer(play1);
 
-            GUI_Car car2 = new GUI_Car(Color.RED, Color.RED, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play2 = new GUI_Player("Player2", 20, car2);
-            gui.addPlayer(play2);
+            int x = Integer.parseInt(Textdata);
 
-            player1 = new Player(20);
-            player2 = new Player(20);
-            board2[0].setCar(play1, true);
-            board2[0].setCar(play2, true);
-            while (playing) {
-                gameRunner2.GameRun2(play1, play2, board2, gui, player1, player2);
-                if(gameRunner2.winner) {
-                    gameRunner2.setWinner(gui);
-                    break;
+            if (x == 2) {
+                GUI_Car car1 = new GUI_Car(Color.BLUE, Color.BLACK, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play1 = new GUI_Player("Player1", 20, car1);
+                gui.addPlayer(play1);
+
+                GUI_Car car2 = new GUI_Car(Color.RED, Color.RED, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play2 = new GUI_Player("Player2", 20, car2);
+                gui.addPlayer(play2);
+
+                player1 = new Player(20);
+                player2 = new Player(20);
+                board2[0].setCar(play1, true);
+                board2[0].setCar(play2, true);
+                while (playing) {
+                    gameRunner2.GameRun2(play1, play2, board2, gui, player1, player2);
+                    if (gameRunner2.winner) {
+                        gameRunner2.setWinner(gui);
+                        break;
+                    }
                 }
-                }
-            }
+            } else if (x == 3) {
+                GUI_Car car1 = new GUI_Car(Color.RED, Color.RED, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play1 = new GUI_Player("Player1", 18, car1);
+                gui.addPlayer(play1);
 
+                GUI_Car car2 = new GUI_Car(Color.YELLOW, Color.WHITE, GUI_Car.Type.UFO, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play2 = new GUI_Player("Player2", 18, car2);
+                gui.addPlayer(play2);
 
+                GUI_Car car3 = new GUI_Car(Color.BLUE, Color.WHITE, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play3 = new GUI_Player("Player3", 18, car3);
+                gui.addPlayer(play3);
 
-
-        else if (x==3){
-            GUI_Car car1 = new GUI_Car(Color.RED, Color.RED, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play1 = new GUI_Player("Player1",18,  car1);
-            gui.addPlayer(play1);
-
-            GUI_Car car2 = new GUI_Car(Color.YELLOW, Color.WHITE, GUI_Car.Type.UFO, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play2 = new GUI_Player("Player2",18,  car2);
-            gui.addPlayer(play2);
-
-            GUI_Car car3 = new GUI_Car(Color.BLUE, Color.WHITE, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play3 = new GUI_Player("Player3",18,  car3);
-            gui.addPlayer(play3);
-
-            player1 = new Player(18);
-            player2= new Player(18);
-            player3 = new Player(18);
-            board2[0].setCar(play1,true);
-            board2[0].setCar(play2,true);
-            board2[0].setCar(play3,true);
+                player1 = new Player(18);
+                player2 = new Player(18);
+                player3 = new Player(18);
+                board2[0].setCar(play1, true);
+                board2[0].setCar(play2, true);
+                board2[0].setCar(play3, true);
 
                 while (playing) {
-                    gameRunner3.GameRun3(play1,play2,play3,board2,gui,player1,player2,player3);
+                    gameRunner3.GameRun3(play1, play2, play3, board2, gui, player1, player2, player3);
+                }
+            } else {
+                GUI_Car car1 = new GUI_Car(Color.RED, Color.RED, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play1 = new GUI_Player("Player1", 16, car1);
+                gui.addPlayer(play1);
+
+                GUI_Car car2 = new GUI_Car(Color.YELLOW, Color.WHITE, GUI_Car.Type.UFO, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play2 = new GUI_Player("Player2", 16, car2);
+                gui.addPlayer(play2);
+
+                GUI_Car car3 = new GUI_Car(Color.BLUE, Color.BLACK, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play3 = new GUI_Player("Player3", 16, car3);
+                gui.addPlayer(play3);
+
+                GUI_Car car4 = new GUI_Car(Color.GREEN, Color.BLACK, GUI_Car.Type.RACECAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
+                GUI_Player play4 = new GUI_Player("Player4", 16, car4);
+                gui.addPlayer(play4);
+
+                player1 = new Player(16);
+                player2 = new Player(16);
+                player3 = new Player(16);
+                player4 = new Player(16);
+                board2[0].setCar(play1, true);
+                board2[0].setCar(play2, true);
+                board2[0].setCar(play3, true);
+                board2[0].setCar(play4, true);
+
+                while (playing) {
+                    gameRunner4.GameRun4(play1, play2, play3, play4, board2, gui, player1, player2, player3, player4);
+                }
             }
         }
-        else {
-            GUI_Car car1 = new GUI_Car(Color.RED, Color.RED, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play1 = new GUI_Player("Player1",16,  car1);
-            gui.addPlayer(play1);
-
-            GUI_Car car2 = new GUI_Car(Color.YELLOW, Color.WHITE, GUI_Car.Type.UFO, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play2 = new GUI_Player("Player2",16,  car2);
-            gui.addPlayer(play2);
-
-            GUI_Car car3 = new GUI_Car(Color.BLUE, Color.BLACK, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play3 = new GUI_Player("Player3",16,  car3);
-            gui.addPlayer(play3);
-
-            GUI_Car car4 = new GUI_Car(Color.GREEN, Color.BLACK, GUI_Car.Type.RACECAR, GUI_Car.Pattern.HORIZONTAL_DUAL_COLOR);
-            GUI_Player play4 = new GUI_Player("Player4",16,  car4);
-            gui.addPlayer(play4);
-
-            player1 = new Player(16);
-            player2= new Player(16);
-            player3 = new Player(16);
-            player4 = new Player(16);
-            board2[0].setCar(play1,true);
-            board2[0].setCar(play2,true);
-            board2[0].setCar(play3,true);
-            board2[0].setCar(play4,true);
-
-            while (playing) {
-                gameRunner4.GameRun4(play1,play2,play3,play4,board2,gui,player1,player2,player3,player4);
+            catch (Exception e){
+            gui.showMessage("Try a digit.");
             }
         }
-    }
 }
