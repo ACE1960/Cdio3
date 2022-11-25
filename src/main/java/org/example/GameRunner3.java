@@ -68,6 +68,7 @@ public class GameRunner3 extends GameRunner2 {
             board2[(p2 - holder.getSum()) % 24].removeAllCars();
         board2[n].setCar(play2, true);
 
+
         Field playerField2 = board3.fieldlist[n];
         playerField2.landOndField(player2, player1, player3);
         play1.setBalance(player1.myWallet.getMoney());
@@ -112,6 +113,8 @@ public class GameRunner3 extends GameRunner2 {
         play2.setBalance(player2.myWallet.getMoney());
         play3.setBalance(player3.myWallet.getMoney());
 
+
+
         checkIfWinner(player1, player2, player3, gui);
         if (playerField3.isOwned() && player3.getOwnerlist(o + 1)) {
             gui.showMessage("Player 3 owns this property");
@@ -127,7 +130,8 @@ public class GameRunner3 extends GameRunner2 {
     }
 
     public void checkIfWinner(Player player1, Player player2, Player player3, GUI gui) throws InterruptedException {
-        if (player1.myWallet.getMoney() == 0) {
+        if (player1.myWallet.getMoney() == 0)
+        {
             winner = true;
             if (player2.myWallet.getMoney() > player3.myWallet.getMoney()) {
                 gui.showMessage("VI HAR EN VINDER DING DING, TILLYKKE PLAYER 2, Du har vundet verdens bedste spil");
@@ -135,7 +139,8 @@ public class GameRunner3 extends GameRunner2 {
             } else
                 gui.showMessage("VI HAR EN VINDER DING, TILLYKKE PLAYER 3, Bare tuk tuk!");
             setWinner(gui);
-        } else if (player2.myWallet.getMoney() == 0) {
+        } else if (player2.myWallet.getMoney() == 0)
+        {
             winner = true;
             if (player1.myWallet.getMoney() > player3.myWallet.getMoney()) {
                 gui.showMessage("VI HAR EN VINDER DING DING, TILLYKKE PLAYER 1, Du har vundet verdens bedste spil");

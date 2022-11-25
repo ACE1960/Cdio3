@@ -24,10 +24,13 @@ public class Player {
         boolean m =ownerlist[bool];
         return m;
     }
+   //set ownerlist, det her er hvad der udgør int[] ints array listen, og påsætter elementen til at være true, så man ved
+   //hvad der påsat til listen
     public void setOwnerlist(int bool) {
    ownerlist[bool]= true;
     }
 
+    //det samme som ovenstående, bare for jail.
     public boolean isInJail() {
         return isInJail;
     }

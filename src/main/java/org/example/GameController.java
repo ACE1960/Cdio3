@@ -81,6 +81,8 @@ public class GameController {
                 board2[0].setCar(play2, true);
                 board2[0].setCar(play3, true);
 
+
+
                 while (playing) {
                     gameRunner3.GameRun3(play1, play2, play3, board2, gui, player1, player2, player3);
                 }
@@ -105,6 +107,8 @@ public class GameController {
                 player2 = new Player(16);
                 player3 = new Player(16);
                 player4 = new Player(16);
+
+
                 board2[0].setCar(play1, true);
                 board2[0].setCar(play2, true);
                 board2[0].setCar(play3, true);
@@ -115,6 +119,7 @@ public class GameController {
                 }
             }
         }
+
             catch (Exception e){
             gui.showMessage("Try a digit.");
             }

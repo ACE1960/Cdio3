@@ -117,6 +117,7 @@ public class GameRunner4 extends GameRunner2 {
         } else
             System.out.println();
 
+        //money interface for player 3
         gui.showMessage("Player3 tryk enter:");
         p3 += holder.sum();
         gui.setDice(holder.die1.getFacevalue(), holder.die2.getFacevalue());
@@ -150,6 +151,8 @@ public class GameRunner4 extends GameRunner2 {
         } else
             board2[(p3 - holder.getSum()) % 24].removeAllCars();
         board2[o].setCar(play3, true);
+
+
 
         Field playerField3 = board3.fieldlist[o];
         playerField3.landOndField(player3, player2, player3, player4);
