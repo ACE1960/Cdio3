@@ -16,7 +16,7 @@ public class BuyableField extends Field {
         this.color=color;
      
     }
-/*
+
     public int getColour(int Farve) {
         
         //Dette er arrayliste over forskellige farver, og hvilke gameboard nummer de indeholder.
@@ -59,200 +59,63 @@ public class BuyableField extends Field {
             return Grøn[0];
         }
 
-        
-        
+
+
         else {
             return 0;
         }
     }
-    */
+
 
     @Override
     // if player can afford the house scenario.
-    public void landOndField(Player player1,Player player2) {
-        /*
+    public void landOndField(Player player1) {
+
          if(player1.isInJail()) {
             player1.myWallet.setSquareMoney(-1);
             player1.myWallet.UpdateMoney();
             player1.setInJail(false);
         }
-         */
-       if (owned == false) {
-           if (player1.myWallet.getMoney() > cost) {
-               player1.myWallet.setSquareMoney(-cost);
-               player1.myWallet.UpdateMoney();
-               player1.setOwnerlist(getBoardNumber());
-               owned = true;
-               
-           }
-           // if player is broke scenario. He will lose the rest of his money hahah.
-           else {
-               if (!player1.getOwnerlist(getBoardNumber())) {
-                   player1.myWallet.setSquareMoney(-cost);
-                   player1.myWallet.UpdateMoney();
-               }
-           }
-       }
-       else {
-           /*
-           if (!player1.getOwnerlist(getBoardNumber())) {
-               // scenario where player can afford the rent.
-               if((player1.getOwnerlist(getBoardNumber()) && player1.getOwnerlist(getColour(getBoardNumber())))){
-                   player1.myWallet.setSquareMoney(-rentMoney*2);
-                   player1.myWallet.UpdateMoney();
-                   player2.myWallet.setSquareMoney(rentMoney*2);
-                   player2.myWallet.UpdateMoney();
-               }
-*/
-               if(player1.myWallet.getMoney()>cost) {
-                   player1.myWallet.setSquareMoney(-cost);
-                   player1.myWallet.UpdateMoney();
-                   player2.myWallet.setSquareMoney(cost);
-                   player2.myWallet.UpdateMoney();
-                   // Moiz
-                   
-               }
-               else {
-                   // sceario where player cannot afford to pay rent.
-                   player1.myWallet.setSquareMoney(-cost);
-                   player1.myWallet.UpdateMoney();
-                   player2.myWallet.setSquareMoney(player1.myWallet.getSquareMoney());
-                   player2.myWallet.UpdateMoney();
 
-               }
-           }
-       }
-
-    @Override
-    public void landOndField(Player player1,Player player2,Player player3) {
-             /*
-         if(player1.isInJail()) {
-            player1.myWallet.setSquareMoney(-1);
-            player1.myWallet.UpdateMoney();
-            player1.setInJail(false);
-        }
-         */
         if (owned == false) {
             if (player1.myWallet.getMoney() > cost) {
                 player1.myWallet.setSquareMoney(-cost);
                 player1.myWallet.UpdateMoney();
                 player1.setOwnerlist(getBoardNumber());
                 owned = true;
+
             }
+            // if player is broke scenario. He will lose the rest of his money hahah.
             else {
                 if (!player1.getOwnerlist(getBoardNumber())) {
                     player1.myWallet.setSquareMoney(-cost);
                     player1.myWallet.UpdateMoney();
                 }
             }
-        }
+        } else {
 
-        else {
             if (!player1.getOwnerlist(getBoardNumber())) {
-                if(player2.getOwnerlist(getBoardNumber())) {
-                    if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player2.myWallet.setSquareMoney(cost);
-                        player2.myWallet.UpdateMoney();
-                    }
-                    else{
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player2.myWallet.setSquareMoney(player1.myWallet.getMoney());
-                        player2.myWallet.UpdateMoney();
-                    }
-                }
-                else  {
-                    if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player3.myWallet.setSquareMoney(cost);
-                        player3.myWallet.UpdateMoney();
-                    }
-                    else{
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player3.myWallet.setSquareMoney(player1.myWallet.getMoney());
-                        player3.myWallet.UpdateMoney();
-                    }
-                }
-            }
-        }
-    }
-    @Override
-    public void landOndField(Player player1,Player player2,Player player3, Player player4) {
-          /*
-         if(player1.isInJail()) {
-            player1.myWallet.setSquareMoney(-1);
-            player1.myWallet.UpdateMoney();
-            player1.setInJail(false);
-        }
-         */
-        if (owned==false) {
-            if (owned == false) {
-                if (player1.myWallet.getMoney() > cost) {
+                // scenario where player can afford the rent.
+                   if (player1.myWallet.getMoney() > cost) {
                     player1.myWallet.setSquareMoney(-cost);
                     player1.myWallet.UpdateMoney();
-                    player1.setOwnerlist(getBoardNumber());
-                    owned = true;
-                }
+                    player2.myWallet.setSquareMoney(cost);
+                    player2.myWallet.UpdateMoney();
+                    // Moiz
 
-                else {
-                    if (!player1.getOwnerlist(getBoardNumber())) {
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                    }
-                }
-            }
-        }
-        else {
-            if (!player1.getOwnerlist(getBoardNumber())) {
+                } else {
+                    // sceario where player cannot afford to pay rent.
+                    player1.myWallet.setSquareMoney(-cost);
+                    player1.myWallet.UpdateMoney();
+                    player2.myWallet.setSquareMoney(player1.myWallet.getSquareMoney());
+                    player2.myWallet.UpdateMoney();
 
-                if(player2.getOwnerlist(getBoardNumber())) {
-                    if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player2.myWallet.setSquareMoney(cost);
-                        player2.myWallet.UpdateMoney();
-                    }
-                    else{
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player2.myWallet.setSquareMoney(player1.myWallet.getMoney());
-                        player2.myWallet.UpdateMoney();
-                    }
-
-                }
-                else if (player3.getOwnerlist(getBoardNumber()))  {
-                    if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player3.myWallet.setSquareMoney(cost);
-                        player3.myWallet.UpdateMoney();
-                    }
-                    else{
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player3.myWallet.setSquareMoney(player1.myWallet.getMoney());
-                        player3.myWallet.UpdateMoney();
-                    }
-                }
-                else{
-                    if(player1.myWallet.getMoney()>cost) {
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player4.myWallet.setSquareMoney(cost);
-                        player4.myWallet.UpdateMoney();
-                    }
-                    else{
-                        player1.myWallet.setSquareMoney(-cost);
-                        player1.myWallet.UpdateMoney();
-                        player4.myWallet.setSquareMoney(player1.myWallet.getMoney());
-                        player4.myWallet.UpdateMoney();
-                    }
                 }
             }
         }
     }
-}
+
+    }
+
+
+

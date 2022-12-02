@@ -33,6 +33,4 @@ public class Board {
   fieldlist[23]= new BuyableField("Strandpromenaden","Blå",24,4);
 
 }
-
-
 }
