@@ -22,7 +22,7 @@ public class Start extends Field{
         player1.myWallet.setSquareMoney(money);
         player1.myWallet.UpdateMoney();
     }
-    @Override
+
 
 
 }

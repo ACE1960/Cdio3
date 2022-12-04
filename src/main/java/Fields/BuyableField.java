@@ -99,16 +99,14 @@ public class BuyableField extends Field {
                    if (player1.myWallet.getMoney() > cost) {
                     player1.myWallet.setSquareMoney(-cost);
                     player1.myWallet.UpdateMoney();
-                    player2.myWallet.setSquareMoney(cost);
-                    player2.myWallet.UpdateMoney();
+
                     // Moiz
 
                 } else {
                     // sceario where player cannot afford to pay rent.
                     player1.myWallet.setSquareMoney(-cost);
                     player1.myWallet.UpdateMoney();
-                    player2.myWallet.setSquareMoney(player1.myWallet.getSquareMoney());
-                    player2.myWallet.UpdateMoney();
+
 
                 }
             }
