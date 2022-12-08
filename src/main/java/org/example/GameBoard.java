@@ -1,14 +1,7 @@
 package org.example;
 
-import gui_fields.GUI_Brewery;
-import gui_fields.GUI_Chance;
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Jail;
-import gui_fields.GUI_Refuge;
-import gui_fields.GUI_Shipping;
-import gui_fields.GUI_Start;
-import gui_fields.GUI_Street;
-import gui_fields.GUI_Tax;
+import gui_fields.*;
+
 import java.awt.Color;
 
 public class  GameBoard {
@@ -18,7 +11,7 @@ public class  GameBoard {
 
 
     public static GUI_Field[] makeFields() {
-        GUI_Field[] board = new GUI_Field[24];
+        GUI_Field board[] = new GUI_Field[24];
         int i = 0;
         board[i++] = new GUI_Start("Start", "Modtag: 2", "Modtag 2M,-Når man har passeret start", Color.RED, Color.BLACK);
         board[i++] = new GUI_Street("Gatekjøkkenet", "Pris:  1", "Gatekjøkkenet", "Leje:  1", new Color(101, 67, 33), Color.BLACK);
@@ -44,6 +37,7 @@ public class  GameBoard {
         board[i++] = new GUI_Chance("?", "Prøv lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
         board[i++] = new GUI_Street("Vandlandet", "Pris:  4", "Vandlandet", "Leje:  4", new Color(25, 116, 210), Color.BLACK);
         board[i++] = new GUI_Street("Strandpromonadenn", "Pris:  4", "Strandpromonaden", "Leje:  4", new Color(25, 116, 210), Color.BLACK);
+
         return board;
     }
 }

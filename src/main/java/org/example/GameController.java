@@ -11,17 +11,17 @@ public class GameController {
     Board board3;
     private GameBoard[] board;
     boolean playing = true;
-    String inputText= "";
-    String Textdata;
-    int cash;
-    boolean winner;
-    GUI gui;
-    GUI_Player [] playArray;
-    int p1;
-    Player [] playerArray,getPlayerArray2;
+    private String inputText= "";
+   private String Textdata;
+    private int cash;
+    private boolean winner;
+    private GUI gui;
+    private GUI_Player [] playArray;
+    private int p1;
+    private Player [] playerArray,getPlayerArray2;
     private GameBoard [] board4;
-    GUI_Field[] board1,board2= new GUI_Field[24];
-    GameBoard gameBoard;
+    private GUI_Field[] board1,board2= new GUI_Field[24];
+    private GameBoard gameBoard;
     public GameController() {
         holder=new Holder();
         board3= new Board();
